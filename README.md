@@ -1,4 +1,4 @@
-# Bugbear - D&D Campaign Manager 
+<h1> <img src="resources/icon/bugbearIcon_64.png" alt="Bugbear" height="42" width="42" align="top" /> Bugbear - D&D Campaign Manager </h1>
 ![Bugbear Logo](/resources/icon/bugbearIcon_64.png) 
  
 ## Overview  
