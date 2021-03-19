@@ -9,29 +9,35 @@
 
 
 ## Tables 
-User Table: Storing user information
+**User Table:**
  - User name
  - User email
  - User password
-Campaign Table:
+ 
+**Campaign Table:**
  - The name of the campaign
  - The description of the campaign
  - All the users currently in the campaign
-Npc Table:
+ 
+**Npc Table:**
  - NPC’s name
  - A description of the NPC
  - NPC’s character stats
-Location Table:
+ 
+**Location Table:**
  - Location name
  - Location description
-Encounter Table:
+ 
+**Encounter Table:**
  - Encounter name
  - Description of the encounter
  - Location of encounter
-Item Table:
+ 
+**Item Table:**
  - Item name
  - Item description
-Map Table:
+ 
+**Map Table:**
  - Map title
  - Map image
  - Character Table: Storing user created characters
@@ -80,7 +86,7 @@ As a GM - Reference and Plan encounters.
 
 
 ## Minimum Viable Product
-**Both Users and GMs:
+**Both Users and GMs:**
 - Account creation and management
 - View story objects
 - View uploaded Maps
@@ -89,9 +95,11 @@ As a GM - Reference and Plan encounters.
 - View locations
 - View previous encounters
 - Roll dice
-**User-Targeted Features:
+
+**User-Targeted Features:**
 - Selecting a character within a campaign
-**GM-Targeted Features:
+
+**GM-Targeted Features:**
 - Creating template characters for user’s to select
 - Creating, Viewing, Editing, Deleting story objects
 - Uploading/Linking to Images for Maps
@@ -116,4 +124,3 @@ As a GM - Reference and Plan encounters.
 - Rather than storing the story in individual “story objects”, we would like to have GMs writing in a word-processor-like environment that is easier to use than smaller paragraph sized chunks of story.
 - Detailed game mechanics:
 	- A link or pop up to certain game mechanics when they are necessary.
-
