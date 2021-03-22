@@ -1,13 +1,13 @@
-﻿using System;
+﻿using BBModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BBModels;
 
 namespace BBDL
 {
-    public class BugbearDL : IBugbearDL
+    public class BugbearRepoDB : IBugbearDL
     {
         // private readonly BBDBContext _context;
         // public BugbearDL (BBDBContext context)
