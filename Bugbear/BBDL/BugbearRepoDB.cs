@@ -9,16 +9,16 @@ namespace BBDL
 {
     public class BugbearRepoDB : IBugbearDL
     {
-        // private readonly BugbearDBContext _context;
-        // public BugbearRepoDB (BugbearDBContext context)
-        // {
-        //     _context = context;
-        // }
+        private readonly BugbearDBContext _context;
+        public BugbearRepoDB (BugbearDBContext context)
+        {
+             _context = context;
+        }
         public Campaign AddCampaign(Campaign newCampaign)
         {
-            // _context.Campaign.Add(newCampaign);
-            // _context.SaveChanges();
-            // return newCampaign;
+            //_context.Campaign.Add(newCampaign);
+            //_context.SaveChanges();
+            //return newCampaign;
             throw new NotImplementedException();
         }
 
