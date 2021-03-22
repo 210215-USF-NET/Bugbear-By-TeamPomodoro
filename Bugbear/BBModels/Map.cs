@@ -10,7 +10,7 @@ namespace BBModels
     {
         public int MapID { get; set; }
         public string MapTitle { get; set; }
-        public string MapImage { get; set; } //temporarily making this a string until we figure out how to store images
+        public byte[] MapImage { get; set; }
         public int CampaignID { get; set; }
     }
 }

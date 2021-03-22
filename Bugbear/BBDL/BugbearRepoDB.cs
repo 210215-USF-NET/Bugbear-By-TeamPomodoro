@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace BBDL
 {
+<<<<<<< HEAD:Bugbear/BBDL/BugbearRepoDB.cs
     public class BugbearRepoDB : IBugbearDL
+=======
+    class BugbearDBContext
+>>>>>>> ddcc06128316093111bcf8b5a3c5a47005c6f76a:Bugbear/BBDL/BugbearDBContext.cs
     {
         // private readonly BBDBContext _context;
         // public BugbearDL (BBDBContext context)
