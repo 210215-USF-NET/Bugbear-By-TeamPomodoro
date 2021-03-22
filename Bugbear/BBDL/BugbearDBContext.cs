@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BBDL
 {
-    public class BugbearDL : IBugbearDL
+    class BugbearDBContext
     {
     }
 }
