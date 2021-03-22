@@ -7,7 +7,7 @@ using BBModels;
 
 namespace BBDL
 {
-    public class BugbearDL : IBugbearDL
+    class BugbearDBContext
     {
         // private readonly BBDBContext _context;
         // public BugbearDL (BBDBContext context)
