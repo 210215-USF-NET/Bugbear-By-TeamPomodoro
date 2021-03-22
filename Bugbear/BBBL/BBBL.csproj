@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BBDL\BBDL.csproj" />
+    <ProjectReference Include="..\BBModels\BBModels.csproj" />
   </ItemGroup>
 
 </Project>
