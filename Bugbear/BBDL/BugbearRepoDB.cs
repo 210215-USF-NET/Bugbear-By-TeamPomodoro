@@ -9,8 +9,8 @@ namespace BBDL
 {
     public class BugbearRepoDB : IBugbearDL
     {
-        // private readonly BBDBContext _context;
-        // public BugbearDL (BBDBContext context)
+        // private readonly BugbearDBContext _context;
+        // public BugbearRepoDB (BugbearDBContext context)
         // {
         //     _context = context;
         // }
