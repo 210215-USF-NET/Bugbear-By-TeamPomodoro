@@ -10,7 +10,7 @@ namespace BBModels
     {
         public int CharacterID { get; set; }
         public string CharacterName { get; set; }
-        //public string CharacterStrats { get; set; }
+        //public string CharacterStats { get; set; }
         public List<Item> ItemList { get; set; }
         public int Money { get; set; }
         public int UserID { get; set; }
