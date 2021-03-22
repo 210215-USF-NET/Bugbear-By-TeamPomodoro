@@ -10,7 +10,7 @@ namespace BBModels
     {
         public int EncounterID { get; set; }
         public string EncounterTitle { get; set; }
-        public string Description { get; set; }
+        public string EncounterDescription { get; set; }
         public int LocationID { get; set; }
         public int CampaignID { get; set; }
     }
