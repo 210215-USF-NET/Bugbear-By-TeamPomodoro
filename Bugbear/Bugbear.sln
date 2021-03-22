@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BugbearMVC", "BugbearMVC\BugbearMVC.csproj", "{85E73D37-FD90-4AA1-A24B-AE5D936F5079}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BBBL", "BBBL\BBBL.csproj", "{6C9FE1CA-8790-4A38-9D44-C31653198CCD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BBDL", "BBDL\BBDL.csproj", "{A44ADE88-851F-498E-8C21-1849DF58F65B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BBModels", "BBModels\BBModels.csproj", "{B790F7A7-31CE-4BBB-852B-5826E707F018}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBREST", "BBREST\BBREST.csproj", "{3550AD5B-0E56-4F06-8342-7B3955590F7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BBREST", "BBREST\BBREST.csproj", "{3550AD5B-0E56-4F06-8342-7B3955590F7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{85E73D37-FD90-4AA1-A24B-AE5D936F5079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85E73D37-FD90-4AA1-A24B-AE5D936F5079}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85E73D37-FD90-4AA1-A24B-AE5D936F5079}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85E73D37-FD90-4AA1-A24B-AE5D936F5079}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6C9FE1CA-8790-4A38-9D44-C31653198CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6C9FE1CA-8790-4A38-9D44-C31653198CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C9FE1CA-8790-4A38-9D44-C31653198CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU

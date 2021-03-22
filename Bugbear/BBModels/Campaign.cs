@@ -11,6 +11,7 @@ namespace BBModels
         public int CampaignID { get; set; }
         public string CampaignName { get; set; }
         public string Description { get; set; }
-        public int UserID { get; set; }//perhaps this should be "GameMasterID"?
+        public int GameMasterID { get; set; }
+        public List<User> CampaignUsers { get; set; }
     }
 }
