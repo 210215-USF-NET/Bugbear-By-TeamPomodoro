@@ -24,15 +24,30 @@ steps:
     projectName: 'Bugbear-By-TeamPomodoro'
   
 - task: DotNetCoreCLI@2
+  displayName: 'restore'
   inputs:
     command: 'restore'
     projects: 'Bugbear/*.sln'
     feedsToUse: 'select'
 
 - task: DotNetCoreCLI@2
+  displayName: 'build'
   inputs:
     command: 'build'
     projects: 'Bugbear/*.sln'
+
+- task: DotNetCoreCLI@2
+  displayName: 'test'
+  inputs:
+    command: 'test'
+    projects: 'Bugbear/BBTest/*.csproj'
+    arguments: --configuration $(buildConfiguration) --collect "Code Coverage"
+
+- task: PublishCodeCoverageResults@1
+  displayName: publish code coverage results
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '**/coburtura/coverage.xml'
 
 - task: SonarCloudAnalyze@1
   displayName: run code analysis
