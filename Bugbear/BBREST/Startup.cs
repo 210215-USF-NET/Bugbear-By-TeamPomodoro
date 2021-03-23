@@ -1,3 +1,4 @@
+using BBBL;
 using BBDL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,6 +37,9 @@ namespace BBREST
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BBREST", Version = "v1" });
             });
+            services.AddDbContext<BugbearDBContext>(options => options.UseNpgsql(Configuration.GetConnectionString("BugbearDB")));
+            services.AddScoped<IBugbearRepository, BugbearRepoDB>();
+            services.AddScoped<IBugbearBL, BugbearBL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

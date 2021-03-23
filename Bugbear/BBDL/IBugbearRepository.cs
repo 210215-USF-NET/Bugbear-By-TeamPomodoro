@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BBBL
+namespace BBDL
 {
-    public interface IBugbearBL
+    public interface IBugbearRepository
     {
         Task<Campaign> AddCampaignAsync(Campaign newCampaign);
         Task<Character> AddCharacterAsync(Character newCharacter);

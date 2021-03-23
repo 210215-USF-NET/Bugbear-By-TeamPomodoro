@@ -29,6 +29,7 @@ namespace BBDL
         public DbSet<NPC> NPCs { get; set; }
         public DbSet<Story> Stories { get; set; }
         public DbSet<User> Users { get; set; }
+        public IEnumerable<object> Character { get; internal set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

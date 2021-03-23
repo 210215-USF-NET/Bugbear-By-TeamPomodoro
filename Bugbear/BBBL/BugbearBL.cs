@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using BBDL;
 using BBModels;
 
@@ -7,144 +8,144 @@ namespace BBBL
 {
     public class BugbearBL : IBugbearBL
     {
-        private readonly IBugbearDL _repo;
-        public BugbearBL(IBugbearDL repo)
+        private readonly IBugbearRepository _repo;
+        public BugbearBL(IBugbearRepository repo)
         {
             _repo = repo;
         }
-        public Campaign AddCampaign(Campaign newCampaign)
+        public async Task<Campaign> AddCampaignAsync(Campaign newCampaign)
         {
-            return _repo.AddCampaign(newCampaign);
+            return await _repo.AddCampaignAsync(newCampaign);
         }
 
-        public Character AddCharacter(Character newCharacter)
+        public async Task<Character> AddCharacterAsync(Character newCharacter)
         {
-            return _repo.AddCharacter(newCharacter);
+            return await _repo.AddCharacterAsync(newCharacter);
         }
 
-        public Encounter AddEncounter(Encounter newEncounter)
+        public async Task<Encounter> AddEncounterAsync(Encounter newEncounter)
         {
-            return _repo.AddEncounter(newEncounter);
+            return await _repo.AddEncounterAsync(newEncounter);
         }
 
-        public Item AddItem(Item newItem)
+        public async Task<Item> AddItemAsync(Item newItem)
         {
-            return _repo.AddItem(newItem);
+            return await _repo.AddItemAsync(newItem);
         }
 
-        public Location AddLocation(Location newLocation)
+        public async Task<Location> AddLocationAsync(Location newLocation)
         {
-            return _repo.AddLocation(newLocation);
+            return await _repo.AddLocationAsync(newLocation);
         }
 
-        public Map AddMap(Map newMap)
+        public async Task<Map> AddMapAsync(Map newMap)
         {
-            return _repo.AddMap(newMap);
+            return await _repo.AddMapAsync(newMap);
         }
 
-        public NPC AddNPC(NPC newNPC)
+        public async Task<NPC> AddNPCAsync(NPC newNPC)
         {
-            return _repo.AddNPC(newNPC);
+            return await _repo.AddNPCAsync(newNPC);
         }
 
-        public Story AddStory(Story newStory)
+        public async Task<Story> AddStoryAsync(Story newStory)
         {
-            return _repo.AddStory(newStory);
+            return await _repo.AddStoryAsync(newStory);
         }
 
-        public User AddUser(User newUser)
+        public async Task<User> AddUserAsync(User newUser)
         {
-            return _repo.AddUser(newUser);
+            return await _repo.AddUserAsync(newUser);
         }
 
-        public Campaign DeleteCampaign(Campaign newCampaign)
+        public async Task<Campaign> DeleteCampaignAsync(Campaign newCampaign)
         {
-            return _repo.DeleteCampaign(newCampaign);
+            return await _repo.DeleteCampaignAsync(newCampaign);
         }
 
-        public Character DeleteCharacter(Character newCharacter)
+        public async Task<Character> DeleteCharacterAsync(Character newCharacter)
         {
-            return _repo.DeleteCharacter(newCharacter);
+            return await _repo.DeleteCharacterAsync(newCharacter);
         }
 
-        public Encounter DeleteEncounter(Encounter newEncounter)
+        public async Task<Encounter> DeleteEncounterAsync(Encounter newEncounter)
         {
-            return _repo.DeleteEncounter(newEncounter);
+            return await _repo.DeleteEncounterAsync(newEncounter);
         }
 
-        public Item DeleteItem(Item newItem)
+        public async Task<Item> DeleteItemAsync(Item newItem)
         {
-            return _repo.DeleteItem(newItem);
+            return await _repo.DeleteItemAsync(newItem);
         }
 
-        public Location DeleteLocation(Location newLocation)
+        public async Task<Location> DeleteLocationAsync(Location newLocation)
         {
-            return _repo.DeleteLocation(newLocation);
+            return await _repo.DeleteLocationAsync(newLocation);
         }
 
-        public Map DeleteMap(Map newMap)
+        public async Task<Map> DeleteMapAsync(Map newMap)
         {
-            return _repo.DeleteMap(newMap);
+            return await _repo.DeleteMapAsync(newMap);
         }
 
-        public NPC DeleteNPC(NPC newNPC)
+        public async Task<NPC> DeleteNPCAsync(NPC newNPC)
         {
-            return _repo.DeleteNPC(newNPC);
+            return await _repo.DeleteNPCAsync(newNPC);
         }
 
-        public Story DeleteStory(Story newStory)
+        public async Task<Story> DeleteStoryAsync(Story newStory)
         {
-            return _repo.DeleteStory(newStory);
+            return await _repo.DeleteStoryAsync(newStory);
         }
 
-        public User DeleteUser(User newUser)
+        public async Task<User> DeleteUserAsync(User newUser)
         {
-            return _repo.DeleteUser(newUser);
+            return await _repo.DeleteUserAsync(newUser);
         }
 
-        public List<Campaign> GetCampaigns()
+        public async Task<List<Campaign>> GetCampaignsAsync()
         {
-            return _repo.GetCampaigns();
+            return await _repo.GetCampaignsAsync();
         }
 
-        public List<Character> GetCharacters()
+        public async Task<List<Character>> GetCharactersAsync()
         {
-            return _repo.GetCharacters();
+            return await _repo.GetCharactersAsync();
         }
 
-        public List<Encounter> GetEncounters()
+        public async Task<List<Encounter>> GetEncountersAsync()
         {
-            return _repo.GetEncounters();
+            return await _repo.GetEncountersAsync();
         }
 
-        public List<Item> GetItems()
+        public async Task<List<Item>> GetItemsAsync()
         {
-            return _repo.GetItems();
+            return await _repo.GetItemsAsync();
         }
 
-        public List<Location> GetLocations()
+        public async Task<List<Location>> GetLocationsAsync()
         {
-            return _repo.GetLocations();
+            return await _repo.GetLocationsAsync();
         }
 
-        public List<Map> GetMap()
+        public async Task<List<Map>> GetMapAsync()
         {
-            return _repo.GetMap();
+            return await _repo.GetMapAsync();
         }
 
-        public List<NPC> GetNPC()
+        public async Task<List<NPC>> GetNPCAsync()
         {
-            return _repo.GetNPC();
+            return await _repo.GetNPCAsync();
         }
 
-        public List<Story> GetStories()
+        public async Task<List<Story>> GetStoriesAsync()
         {
-            return _repo.GetStories();
+            return await _repo.GetStoriesAsync();
         }
 
-        public List<User> GetUsers()
+        public async Task<List<User>> GetUsersAsync()
         {
-            return _repo.GetUsers();
+            return await _repo.GetUsersAsync();
         }
     }
 }
