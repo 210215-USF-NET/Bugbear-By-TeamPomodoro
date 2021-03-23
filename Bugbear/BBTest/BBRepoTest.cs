@@ -24,14 +24,14 @@ namespace BBTest
             using (var context = new BugbearDBContext(options))
             {
                 //Arrange
-                IBugbearDL _repo = new BugbearRepoDB(context);
+                IBugbearRepository _repo = new BugbearRepoDB(context);
 
                 //Act
-                var campaigns = _repo.GetCampaigns();
+                var campaigns = _repo.GetCampaignsAsync();
 
                 //Assert
                 Assert.NotNull(campaigns);
-                Assert.Equal(2, campaigns.Count);
+                Assert.Equal(2, campaigns.Result.Count);
             }
         }
 
@@ -41,14 +41,14 @@ namespace BBTest
             using (var context = new BugbearDBContext(options))
             {
                 //Arrange
-                IBugbearDL _repo = new BugbearRepoDB(context);
+                IBugbearRepository _repo = new BugbearRepoDB(context);
 
                 //Act
-                var characters = _repo.GetCharacters();
+                var characters = _repo.GetCharactersAsync();
 
                 //Assert
                 Assert.NotNull(characters);
-                Assert.Equal(6, characters.Count);
+                Assert.Equal(6, characters.Result.Count);
             }
         }
 
@@ -58,14 +58,14 @@ namespace BBTest
             using (var context = new BugbearDBContext(options))
             {
                 //Arrange
-                IBugbearDL _repo = new BugbearRepoDB(context);
+                IBugbearRepository _repo = new BugbearRepoDB(context);
 
                 //Act
-                var encounters = _repo.GetEncounters();
+                var encounters = _repo.GetEncountersAsync();
 
                 //Assert
                 Assert.NotNull(encounters);
-                Assert.Equal(2, encounters.Count);
+                Assert.Equal(2, encounters.Result.Count);
             }
         }
 
@@ -75,14 +75,14 @@ namespace BBTest
             using (var context = new BugbearDBContext(options))
             {
                 //Arrange
-                IBugbearDL _repo = new BugbearRepoDB(context);
+                IBugbearRepository _repo = new BugbearRepoDB(context);
 
                 //Act
-                var items = _repo.GetItems();
+                var items = _repo.GetItemsAsync();
 
                 //Assert
                 Assert.NotNull(items);
-                Assert.Equal(2, items.Count);
+                Assert.Equal(2, items.Result.Count);
             }
         }
 
@@ -92,14 +92,14 @@ namespace BBTest
             using (var context = new BugbearDBContext(options))
             {
                 //Arrange
-                IBugbearDL _repo = new BugbearRepoDB(context);
+                IBugbearRepository _repo = new BugbearRepoDB(context);
 
                 //Act
-                var locations = _repo.GetLocations();
+                var locations = _repo.GetLocationsAsync();
 
                 //Assert
                 Assert.NotNull(locations);
-                Assert.Equal(2, locations.Count);
+                Assert.Equal(2, locations.Result.Count);
             }
         }
         [Fact]
@@ -108,14 +108,14 @@ namespace BBTest
             using (var context = new BugbearDBContext(options))
             {
                 //Arrange
-                IBugbearDL _repo = new BugbearRepoDB(context);
+                IBugbearRepository _repo = new BugbearRepoDB(context);
 
                 //Act
-                var npcs = _repo.GetNPC();
+                var npcs = _repo.GetNPCAsync();
 
                 //Assert
                 Assert.NotNull(npcs);
-                Assert.Equal(2, npcs.Count);
+                Assert.Equal(2, npcs.Result.Count);
             }
         }
 
@@ -125,14 +125,14 @@ namespace BBTest
             using (var context = new BugbearDBContext(options))
             {
                 //Arrange
-                IBugbearDL _repo = new BugbearRepoDB(context);
+                IBugbearRepository _repo = new BugbearRepoDB(context);
 
                 //Act
-                var stories = _repo.GetStories();
+                var stories = _repo.GetStoriesAsync();
 
                 //Assert
                 Assert.NotNull(stories);
-                Assert.Equal(2, stories.Count);
+                Assert.Equal(2, stories.Result.Count);
             }
         }
 
@@ -142,14 +142,14 @@ namespace BBTest
             using (var context = new BugbearDBContext(options))
             {
                 //Arrange
-                IBugbearDL _repo = new BugbearRepoDB(context);
+                IBugbearRepository _repo = new BugbearRepoDB(context);
 
                 //Act
-                var users = _repo.GetUsers();
+                var users = _repo.GetUsersAsync();
 
                 //Assert
                 Assert.NotNull(users);
-                Assert.Equal(4, users.Count);
+                Assert.Equal(4, users.Result.Count);
             }
         }
 
