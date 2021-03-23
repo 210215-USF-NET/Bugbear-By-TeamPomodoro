@@ -148,7 +148,7 @@ namespace BBDL
         }
 
         /// <summary>
-        /// For all these Get methods we should pass in an arugment so that we know who we are getting this information for
+        /// For all these Get methods we should pass in an argument so that we know who we are getting this information for
         /// currently we get all the information from our database.
         /// </summary>
         /// <returns></returns>
