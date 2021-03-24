@@ -29,15 +29,11 @@ namespace BBREST
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BugbearDBContext>(options => options.UseNpgsql(Configuration.GetConnectionString("BugbearDB")));
-
-
             services.AddControllers();
             services.AddCors(
                 options =>
                 {
-                    options.AddPolicy(
-                        name: "BBCorsPolicy",
+                    options.AddDefaultPolicy(
                         builder =>
                         {
                             builder.AllowAnyOrigin()
@@ -70,7 +66,7 @@ namespace BBREST
 
             app.UseRouting();
 
-            app.UseCors("BBCorsPolicy");
+            app.UseCors();
 
             app.UseAuthorization();
 
