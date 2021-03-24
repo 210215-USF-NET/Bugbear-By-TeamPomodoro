@@ -33,6 +33,20 @@ namespace BBREST
 
 
             services.AddControllers();
+            services.AddCors(
+                options =>
+                {
+                    options.AddPolicy(
+                        name: "BBCorsPolicy",
+                        builder =>
+                        {
+                            builder.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+                        }
+                   );
+                }
+            );
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BBREST", Version = "v1" });
@@ -55,6 +69,8 @@ namespace BBREST
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("BBCorsPolicy");
 
             app.UseAuthorization();
 
