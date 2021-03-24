@@ -56,6 +56,11 @@ steps:
   inputs:
     pollingTimeoutSec: '300'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
