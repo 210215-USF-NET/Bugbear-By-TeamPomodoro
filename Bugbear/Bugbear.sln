@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BBModels", "BBModels\BBMode
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BBREST", "BBREST\BBREST.csproj", "{3550AD5B-0E56-4F06-8342-7B3955590F7E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BBTest", "BBTest\BBTest.csproj", "{961EA2DA-E60B-4D90-B37B-0F1E980E7058}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3550AD5B-0E56-4F06-8342-7B3955590F7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3550AD5B-0E56-4F06-8342-7B3955590F7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3550AD5B-0E56-4F06-8342-7B3955590F7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{961EA2DA-E60B-4D90-B37B-0F1E980E7058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{961EA2DA-E60B-4D90-B37B-0F1E980E7058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{961EA2DA-E60B-4D90-B37B-0F1E980E7058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{961EA2DA-E60B-4D90-B37B-0F1E980E7058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
