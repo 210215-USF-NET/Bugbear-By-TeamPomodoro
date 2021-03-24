@@ -184,6 +184,12 @@ namespace BBTest
             }
         }
 
+        //[Fact]
+        //public void AddMapShouldAddNewMap()
+        //{
+
+        //}
+
         [Fact]
         public void AddNPCShouldAddNewNPC()
         {
@@ -371,6 +377,13 @@ namespace BBTest
                 Assert.Equal(2, locations.Result.Count);
             }
         }
+
+        //[Fact]
+        //public void GetMapsShouldReturnAllMaps()
+        //{
+
+        //}
+
         [Fact]
         public void GetNPCsShouldReturnAllNPCs()
         {
@@ -419,6 +432,256 @@ namespace BBTest
                 //Assert
                 Assert.NotNull(users);
                 Assert.Equal(4, users.Result.Count);
+            }
+        }
+
+        [Fact]
+        public void DeleteCampaignRemovesTheCampaign()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.DeleteCampaignAsync(
+                    new Campaign
+                    {
+                        CampaignID = 1,
+                        CampaignName = "Balance",
+                        Description = "Three friends meet in a pub looking for work.  One thing leads to another and they get sucked into a Groundhog Day loop except it's in a Old Western Town constantly about to be destroyed and they're being followed by mysterious red ghosts.",
+                        GameMasterID = 4
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var campaigns = assertContext.Campaigns.Select(c => c).ToList();
+                Assert.Single(campaigns);
+            }
+        }
+
+        [Fact]
+        public void DeleteCharacterRemovesTheCharacter()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.DeleteCharacterAsync(
+                    new Character
+                    {
+                        CharacterID = 2,
+                        CharacterName = "Magnus Burnsides",
+                        Money = 420,
+                        UserID = 2,
+
+                        HP = 131,
+                        XPLevel = 16,
+                        Strength = 20,
+                        Dexterity = 14,
+                        Constitution = 18,
+                        Intelligence = 10,
+                        Wisdom = 12,
+                        Charisma = 12
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var characters = assertContext.Characters.Select(c => c).ToList();
+                Assert.Equal(5, characters.Count);
+            }
+        }
+
+        [Fact]
+        public void DeleteEncounterRemovesTheEncounter()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.DeleteEncounterAsync(
+                    new Encounter
+                    {
+                        EncounterID = 1,
+                        EncounterTitle = "HTBG - Gerblins Ambush Buggy",
+                        EncounterDescription = "As our heroes make their way to their destination with Barry Blue Jeans, they are ambushed by a small group of Gerblins.",
+                        LocationID = 2,
+                        CampaignID = 1
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var encounters = assertContext.Encounters.Select(c => c).ToList();
+                Assert.Single(encounters);
+            }
+        }
+
+        [Fact]
+        public void DeleteItemRemovesTheItem()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.DeleteItemAsync(
+                    new Item
+                    {
+                        ItemID = 1,
+                        ItemName = "Taako's Fabulously Magical Umbrella",
+                        ItemDescription = "An umbrella that Taako stole from a robed skeleton on their very first adventure",
+                        CharacterID = 1
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var items = assertContext.Items.Select(c => c).ToList();
+                Assert.Single(items);
+            }
+        }
+        [Fact]
+        public void DeleteLocationRemovesTheLocation()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.DeleteLocationAsync(
+                    new Location
+                    {
+                        LocationID = 2,
+                        LocationName = "Forest Road to Phandalin",
+                        LocationDescription = "A forested path that goes between Wave Echo Cave and Phandalin",
+                        CampaignID = 1
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var locations = assertContext.Locations.Select(c => c).ToList();
+                Assert.Single(locations);
+            }
+        }
+        
+        //[Fact]
+        //public void DeleteMapRemovesTheMap()
+        //{
+
+        //}
+
+        [Fact]
+        public void DeleteNPCRemovesTheNPC()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.DeleteNPCAsync(
+                    new NPC
+                    {
+                        NPCID = 1,
+                        NPCName = "Barry Blue Jeans",
+                        NPCDescription = "Ward to Gundrun Rockseeker, he's here to get help moving Gundrun's things to Wave Echo Cave.  He doesn't talk much, seems like he might be hiding something...",
+                        CampaignID = 1,
+
+                        HP = 69,
+                        XPLevel = 18,
+                        Strength = 11,
+                        Dexterity = 14,
+                        Constitution = 15,
+                        Intelligence = 15,
+                        Wisdom = 11,
+                        Charisma = 16
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var npcs = assertContext.NPCs.Select(c => c).ToList();
+                Assert.Single(npcs);
+            }
+        }
+
+        [Fact]
+        public void DeleteStoryRemovesTheStory()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.DeleteStoryAsync(
+                    new Story
+                    {
+                        StoryID = 1,
+                        DateCreated = new DateTime(2014, 12, 14),
+                        StoryTitle = "Here there be Gerblins (1)",
+                        StoryDescription = "Magnus, Taako, and Merle are recruited to transport Gundrun rockseeker's belongings from Neverwinter to Phandalin by his ward Barry Bluejeans.  Along the way they are attacked by gerblins and Barry is kidnapped.",
+                        CampaignID = 1
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var stories = assertContext.Stories.Select(c => c).ToList();
+                Assert.Single(stories);
+            }
+        }
+
+        [Fact]
+        public void DeleteUserRemovesTheUser()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.DeleteUserAsync(
+                    new User
+                    {
+                        UserID = 1,
+                        FirstName = "Griffin",
+                        LastName = "McElroy",
+                        Email = "griffin@themcelroy.family",
+                        Phone = "111-222-3333"
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var users = assertContext.Users.Select(c => c).ToList();
+                Assert.Equal(3, users.Count);
             }
         }
 
