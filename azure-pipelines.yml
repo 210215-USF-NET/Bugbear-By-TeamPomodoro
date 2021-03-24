@@ -60,6 +60,7 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
+    projects: 'Bugbear/BBREST/*.csproj'
 
 - task: AzureRmWebAppDeployment@4
   inputs:
