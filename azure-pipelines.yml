@@ -66,6 +66,6 @@ steps:
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Azure subscription 1 (1f0ad125-9c6d-4dd3-a0e2-6bf5052dffe8)'
-    appType: 'webAppLinux'
-    WebAppName: 'bugbearapi'
+    appType: 'apiApp'
+    WebAppName: 'bugbear-api'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
