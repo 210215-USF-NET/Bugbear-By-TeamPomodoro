@@ -2,6 +2,7 @@ using BBDL;
 using BBModels;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using Xunit;
 
 namespace BBTest
@@ -16,6 +17,274 @@ namespace BBTest
                 .UseSqlite("Filename=Test.db")
                 .Options;
             Seed();
+        }
+
+        [Fact]
+        public void AddCampaignShouldAddNewCampaign()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.AddCampaignAsync(
+                    new Campaign
+                    {
+                        CampaignID = 6,
+                        CampaignName = "Cool New Campaign",
+                        Description = "A cool new campaign that only my friends get to enjoy!",
+                        GameMasterID = 2
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var result = assertContext.Campaigns.Select(c => c).OrderBy(c => c.CampaignID).LastOrDefaultAsync();
+
+                Assert.NotNull(result.Result);
+                Assert.Equal("Cool New Campaign", result.Result.CampaignName);
+
+            }
+        }
+
+        [Fact]
+        public void AddCharacterShouldAddNewCharacter()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.AddCharacterAsync(
+                    new Character
+                    {
+                        CharacterID = 42,
+                        CharacterName = "Lola Bunny",
+                        Money = 999,
+                        UserID = 4,
+
+                        HP = 666,
+                        XPLevel = 20,
+                        Strength = 18,
+                        Dexterity = 20,
+                        Constitution = 8,
+                        Intelligence = 16,
+                        Wisdom = 11,
+                        Charisma = 20
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var result = assertContext.Characters.Select(c => c).OrderBy(c => c.CharacterID).LastOrDefaultAsync();
+
+                Assert.NotNull(result.Result);
+                Assert.Equal("Lola Bunny", result.Result.CharacterName);
+
+            }
+        }
+
+        [Fact]
+        public void AddEncounterShouldAddNewEncounter()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.AddEncounterAsync(
+                    new Encounter
+                    {
+                        EncounterID = 999,
+                        EncounterTitle = "Portals",
+                        EncounterDescription = "Captain America is ready to stand alone against Thanos, when he is suddenly joined by thousands of Wakandans and Superheroes from around the world.",
+                        LocationID = 1,
+                        CampaignID = 2
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var result = assertContext.Encounters.Select(e => e).OrderBy(e => e.EncounterID).LastOrDefaultAsync();
+
+                Assert.NotNull(result.Result);
+                Assert.Equal("Portals", result.Result.EncounterTitle);
+
+            }
+        }
+
+        [Fact]
+        public void AddItemShouldAddNewItem()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.AddItemAsync(
+                    new Item
+                    {
+                        ItemID = 999,
+                        ItemName = "Infinity Gauntlet",
+                        ItemDescription = "Contains and harnesses the power of the 6 Infinity Stones",
+                        CharacterID = 1
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var result = assertContext.Items.Select(i => i).OrderBy(i => i.ItemID).LastOrDefaultAsync();
+
+                Assert.NotNull(result.Result);
+                Assert.Equal("Infinity Gauntlet", result.Result.ItemName);
+
+            }
+        }
+
+        [Fact]
+        public void AddLocationShouldAddLocation()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.AddLocationAsync(
+                    new Location
+                    {
+                        LocationID = 999,
+                        LocationName = "Avengers Tower",
+                        LocationDescription = "The place where all the magic happens.",
+                        CampaignID = 2
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var result = assertContext.Locations.Select(e => e).OrderBy(e => e.LocationID).LastOrDefaultAsync();
+
+                Assert.NotNull(result.Result);
+                Assert.Equal("Avengers Tower", result.Result.LocationName);
+
+            }
+        }
+
+        [Fact]
+        public void AddNPCShouldAddNewNPC()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.AddNPCAsync(
+                    new NPC
+                    {
+                        NPCID = 42,
+                        NPCName = "Lola Bunny",
+                        NPCDescription = "A cute bunny who's really good at basketball.",
+                        CampaignID = 2,
+
+                        HP = 666,
+                        XPLevel = 20,
+                        Strength = 18,
+                        Dexterity = 20,
+                        Constitution = 8,
+                        Intelligence = 16,
+                        Wisdom = 11,
+                        Charisma = 20
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var result = assertContext.NPCs.Select(e => e).OrderBy(e => e.NPCID).LastOrDefaultAsync();
+
+                Assert.NotNull(result.Result);
+                Assert.Equal("Lola Bunny", result.Result.NPCName);
+
+            }
+        }
+
+        [Fact]
+        public void AddStoryShouldAddNewStory()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.AddStoryAsync(
+                    new Story
+                    {
+                        StoryID = 999,
+                        DateCreated = DateTime.Now,
+                        StoryTitle = "Thanos' Quest",
+                        StoryDescription = "Thanos spent his life trying to do what he thought was right.  he knew there were too many people, and the only way to deal with them was to cull the herd.  Randomly, the only fair way.",
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var result = assertContext.Stories.Select(e => e).OrderBy(e => e.StoryID).LastOrDefaultAsync();
+
+                Assert.NotNull(result.Result);
+                Assert.Equal("Thanos' Quest", result.Result.StoryTitle);
+
+            }
+        }
+
+        [Fact]
+        public void AddUserShouldAddNewUser()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                _repo.AddUserAsync(
+                    new User
+                    {
+                        UserID = 999,
+                        FirstName = "Jack",
+                        LastName = "Long",
+                        Email = "jack.long@revature.net",
+                        Phone = "555-867-5309"
+                    }
+                );
+            }
+
+            using (var assertContext = new BugbearDBContext(options))
+            {
+                //Assert
+                var result = assertContext.Users.Select(e => e).OrderBy(e => e.UserID).LastOrDefaultAsync();
+
+                Assert.NotNull(result.Result);
+                Assert.Equal("Jack", result.Result.FirstName);
+
+            }
         }
 
         [Fact]
