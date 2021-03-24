@@ -10,7 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: 'Bugbear/*.sln'
+  solution: '**/Bugbear/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
@@ -27,20 +27,20 @@ steps:
   displayName: 'restore'
   inputs:
     command: 'restore'
-    projects: 'Bugbear/*.sln'
+    projects: '**/Bugbear/*.sln'
     feedsToUse: 'select'
 
 - task: DotNetCoreCLI@2
   displayName: 'build'
   inputs:
     command: 'build'
-    projects: 'Bugbear/*.sln'
+    projects: '**/Bugbear/*.sln'
 
 - task: DotNetCoreCLI@2
   displayName: 'test'
   inputs:
     command: 'test'
-    projects: 'Bugbear/BBTest/*.csproj'
+    projects: '**/Bugbear/BBTest/*.csproj'
     arguments: --configuration $(buildConfiguration) --collect "Code Coverage"
 
 - task: PublishCodeCoverageResults@1
@@ -60,7 +60,7 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
-    projects: 'Bugbear/BBREST/*.csproj'
+    projects: '**/Bugbear/BBREST/*.csproj'
 
 - task: AzureRmWebAppDeployment@4
   inputs:
