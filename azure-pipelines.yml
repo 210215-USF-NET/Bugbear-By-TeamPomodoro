@@ -10,7 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: 'Bugbear/*.sln'
+  solution: '**/Bugbear/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
@@ -27,20 +27,20 @@ steps:
   displayName: 'restore'
   inputs:
     command: 'restore'
-    projects: 'Bugbear/*.sln'
+    projects: '**/Bugbear/*.sln'
     feedsToUse: 'select'
 
 - task: DotNetCoreCLI@2
   displayName: 'build'
   inputs:
     command: 'build'
-    projects: 'Bugbear/*.sln'
+    projects: '**/Bugbear/*.sln'
 
 - task: DotNetCoreCLI@2
   displayName: 'test'
   inputs:
     command: 'test'
-    projects: 'Bugbear/BBTest/*.csproj'
+    projects: '**/Bugbear/BBTest/*.csproj'
     arguments: --configuration $(buildConfiguration) --collect "Code Coverage"
 
 - task: PublishCodeCoverageResults@1
@@ -55,3 +55,17 @@ steps:
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    projects: '**/Bugbear/BBREST/*.csproj'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1 (1f0ad125-9c6d-4dd3-a0e2-6bf5052dffe8)'
+    appType: 'apiApp'
+    WebAppName: 'bugbear-api'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
