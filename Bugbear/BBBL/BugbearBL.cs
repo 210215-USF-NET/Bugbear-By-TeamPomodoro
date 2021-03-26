@@ -157,5 +157,9 @@ namespace BBBL
         {
             return await _repo.GetUserByEmailAsync(email);
         }
+        public async Task<Character> UpdateCharacterAsync(Character character2BUpdated)
+        {
+            return await _repo.UpdateCharacterAsync(character2BUpdated);
+        }
     }
 }

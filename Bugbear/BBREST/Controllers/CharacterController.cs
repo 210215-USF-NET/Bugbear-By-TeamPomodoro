@@ -54,19 +54,19 @@ namespace BBREST.Controllers
         }
 
         // PUT api/<CharacterController>/5
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> UpdateCharacterAsync(int id, [FromBody] Character character)
-        //{
-        //    try
-        //    {
-        //        await _bugbearBL.UpdateCharacterAsync(character);
-        //        return NoContent();
-        //    }
-        //    catch
-        //    {
-        //        return StatusCode(500);
-        //    }
-        //}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCharacterAsync(int id, [FromBody] Character character)
+        {
+            try
+            {
+                await _bugbearBL.UpdateCharacterAsync(character);
+                return NoContent();
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
+        }
 
         // DELETE api/<CharacterController>/5
         [HttpDelete("{character}")]

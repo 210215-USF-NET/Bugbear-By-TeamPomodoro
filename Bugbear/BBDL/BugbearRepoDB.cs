@@ -216,5 +216,16 @@ namespace BBDL
             // This should get a certain User by email in our database.
             return await _context.Users.FirstOrDefaultAsync(user => user.Email == email);
         }
+
+        public async Task<Character> UpdateCharacterAsync(Character character2BUpdated)
+        {
+            Character oldCharacter = await _context.Characters.FindAsync(character2BUpdated.CharacterID);
+            _context.Entry(oldCharacter).CurrentValues.SetValues(character2BUpdated);
+
+            await _context.SaveChangesAsync();
+
+            _context.ChangeTracker.Clear();
+            return character2BUpdated;
+        }
     }
 }

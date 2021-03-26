@@ -35,5 +35,6 @@ namespace BBBL
         Task<List<Story>> GetStoriesAsync();
         Task<List<User>> GetUsersAsync();
         Task<User> GetUserByEmailAsync(string email);
+        Task<Character> UpdateCharacterAsync(Character character2BUpdated);
     }
 }
