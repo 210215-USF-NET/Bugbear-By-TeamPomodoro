@@ -14,9 +14,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Diagnostics.CodeAnalysis;
 
 namespace BBREST
 {
+    [ExcludeFromCodeCoverage]
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -40,7 +42,7 @@ namespace BBREST
                             .AllowAnyMethod()
                             .AllowAnyHeader();
                         }
-                   );
+                    );
                 }
             );
             services.AddSwaggerGen(c =>

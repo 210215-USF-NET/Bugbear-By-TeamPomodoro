@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using BBDL;
 using BBModels;
 
+
 namespace BBBL
 {
+    [ExcludeFromCodeCoverage]
     public class BugbearBL : IBugbearBL
     {
         private readonly IBugbearRepository _repo;
