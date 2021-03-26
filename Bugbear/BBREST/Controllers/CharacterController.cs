@@ -30,6 +30,7 @@ namespace BBREST.Controllers
 
         // GET api/<CharacterController>/5
         [HttpGet("{name}")]
+        [Produces("application/json")]
         public async Task<IActionResult> GetCharacterByNameAsync(string name)
         {
             var character = await _bugbearBL.GetCharacterByNameAsync(name);
