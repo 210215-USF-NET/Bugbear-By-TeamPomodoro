@@ -69,12 +69,12 @@ namespace BBREST.Controllers
         }
 
         // DELETE api/<CharacterController>/5
-        [HttpDelete("{character}")]
-        public async Task<IActionResult> DeleteCharacterAsync(Character character)
+        [HttpDelete("{name}")]
+        public async Task<IActionResult> DeleteCharacterAsync(string name)
         {
             try
             {
-                await _bugbearBL.DeleteCharacterAsync(character);
+                await _bugbearBL.DeleteCharacterAsync(await _bugbearBL.GetCharacterByNameAsync(name));
                 return NoContent();
             }
             catch
