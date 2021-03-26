@@ -33,5 +33,6 @@ namespace BBBL
         Task<List<NPC>> GetNPCAsync();
         Task<List<Story>> GetStoriesAsync();
         Task<List<User>> GetUsersAsync();
+        Task<User> GetUserByEmailAsync(string email);
     }
 }

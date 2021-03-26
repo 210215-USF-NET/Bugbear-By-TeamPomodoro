@@ -207,5 +207,10 @@ namespace BBDL
             // This should get all Users in our database.
             return await _context.Users.Select(u => u).ToListAsync();
         }
+        public async Task<User> GetUserByEmailAsync(string email)
+        {
+            // This should get a certain User by email in our database.
+            return await _context.Users.FirstOrDefaultAsync(user => user.Email == email);
+        }
     }
 }
