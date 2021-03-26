@@ -165,6 +165,10 @@ namespace BBDL
             // This should return all characters in our database.
             return await _context.Characters.Select(Character => Character).ToListAsync();
         }
+        public async Task<Character> GetCharacterByNameAsync(string name)
+        {
+            return await _context.Characters.FirstOrDefaultAsync(character => character.CharacterName == name);
+        }
 
         public async Task<List<Encounter>> GetEncountersAsync()
         {

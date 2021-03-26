@@ -29,13 +29,13 @@ namespace BBREST.Controllers
         }
 
         // GET api/<CharacterController>/5
-        //[HttpGet("{name}")]
-        //public async Task<IActionResult> GetCharacterByNameAsync(string name)
-        //{
-        //    var character = await _bugbearBL.GetCharacterByNameAsync(name);
-        //    if (character == null) return NotFound();
-        //    return Ok(character);
-        //}
+        [HttpGet("{name}")]
+        public async Task<IActionResult> GetCharacterByNameAsync(string name)
+        {
+            var character = await _bugbearBL.GetCharacterByNameAsync(name);
+            if (character == null) return NotFound();
+            return Ok(character);
+        }
 
         // POST api/<CharacterController>
         [HttpPost]

@@ -26,6 +26,7 @@ namespace BBDL
         Task<User> DeleteUserAsync(User newUser);
         Task<List<Campaign>> GetCampaignsAsync();
         Task<List<Character>> GetCharactersAsync();
+        Task<Character> GetCharacterByNameAsync(string name);
         Task<List<Encounter>> GetEncountersAsync();
         Task<List<Item>> GetItemsAsync();
         Task<List<Location>> GetLocationsAsync();

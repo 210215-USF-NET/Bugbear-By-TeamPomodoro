@@ -115,7 +115,10 @@ namespace BBBL
         {
             return await _repo.GetCharactersAsync();
         }
-
+        public async Task<Character> GetCharacterByNameAsync(string name)
+        {
+            return await _repo.GetCharacterByNameAsync(name);
+        }
         public async Task<List<Encounter>> GetEncountersAsync()
         {
             return await _repo.GetEncountersAsync();
