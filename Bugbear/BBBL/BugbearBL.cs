@@ -114,6 +114,10 @@ namespace BBBL
         {
             return await _repo.GetCampaignsAsync();
         }
+        public async Task<Campaign> GetCampaignByIDAsync(int id)
+        {
+            return await _repo.GetCampaignByIDAsync(id);
+        }
 
         public async Task<List<Character>> GetCharactersAsync()
         {
@@ -123,29 +127,54 @@ namespace BBBL
         {
             return await _repo.GetCharacterByNameAsync(name);
         }
+
         public async Task<List<Encounter>> GetEncountersAsync()
         {
             return await _repo.GetEncountersAsync();
+        }
+        public async Task<Encounter> GetEncounterByIDAsync(int id)
+        {
+            return await _repo.GetEncounterByIDAsync(id);
         }
 
         public async Task<List<Item>> GetItemsAsync()
         {
             return await _repo.GetItemsAsync();
         }
+        public async Task<Item> GetItemByNameAsync(string name)
+        {
+            return await _repo.GetItemByNameAsync(name);
+        }
 
         public async Task<List<Location>> GetLocationsAsync()
         {
             return await _repo.GetLocationsAsync();
+        }
+        public async Task<Location> GetLocationByNameAsync(string name)
+        {
+            return await _repo.GetLocationByNameAsync(name);
         }
 
         public async Task<List<Map>> GetMapAsync()
         {
             return await _repo.GetMapAsync();
         }
+        public async Task<Map> GetMapByNameAsync(string name)
+        {
+            return await _repo.GetMapByNameAsync(name);
+        }
 
         public async Task<List<NPC>> GetNPCAsync()
         {
             return await _repo.GetNPCAsync();
+        }
+        public async Task<NPC> GetNPCByIDAsync(int id)
+        {
+            return await _repo.GetNPCByIDAsync(id);
+        }
+        public async Task<NPC> GetNPCByNameAsync(string name)
+        {
+            return await _repo.GetNPCByNameAsync(name);
         }
 
         public async Task<List<Story>> GetStoriesAsync()
@@ -208,6 +237,6 @@ namespace BBBL
         public async Task<User> UpdateUserAsync(User userToBeUpdated)
         {
             return await _repo.UpdateUserAsync(userToBeUpdated);
-        } 
+        }
     }
 }

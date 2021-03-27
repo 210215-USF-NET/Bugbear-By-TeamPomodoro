@@ -200,6 +200,8 @@ namespace BBDL
             return await _context.NPCs.Select(n => n).ToListAsync();
         }
 
+        
+
         public async Task<List<Story>> GetStoriesAsync()
         {
             // This should get all Storys in our database.

@@ -15,6 +15,9 @@ namespace BBBL
         Task<NPC> AddNPCAsync(NPC newNPC);
         Task<Story> AddStoryAsync(Story newStory);
         Task<User> AddUserAsync(User newUser);
+
+
+
         Task<Campaign> DeleteCampaignAsync(Campaign newCampaign);
         Task<Character> DeleteCharacterAsync(Character newCharacter);
         Task<Encounter> DeleteEncounterAsync(Encounter newEncounter);
@@ -24,18 +27,31 @@ namespace BBBL
         Task<NPC> DeleteNPCAsync(NPC newNPC);
         Task<Story> DeleteStoryAsync(Story newStory);
         Task<User> DeleteUserAsync(User newUser);
+
+
+
         Task<List<Campaign>> GetCampaignsAsync();
+        Task<Campaign> GetCampaignByIDAsync(int id);
         Task<List<Character>> GetCharactersAsync();
         Task<Character> GetCharacterByNameAsync(string name);
         Task<List<Encounter>> GetEncountersAsync();
+        Task<Encounter> GetEncounterByIDAsync(int id);
         Task<List<Item>> GetItemsAsync();
+        Task<Item> GetItemByNameAsync(string name);
         Task<List<Location>> GetLocationsAsync();
+        Task<Location> GetLocationByNameAsync(string name);
         Task<List<Map>> GetMapAsync();
+        Task<Map> GetMapByNameAsync(string name);
         Task<List<NPC>> GetNPCAsync();
+        Task<NPC> GetNPCByIDAsync(int id);
+        Task<NPC> GetNPCByNameAsync(string name);
         Task<List<Story>> GetStoriesAsync();
         Task<Story> GetStoryByIDAsync(int storyID);
         Task<List<User>> GetUsersAsync();
         Task<User> GetUserByEmailAsync(string email);
+
+
+
         Task<Campaign> UpdateCampaignAsync(Campaign campaignToBeUpdated);
         Task<Character> UpdateCharacterAsync(Character characterToBeUpdated);
         Task<Encounter> UpdateEncounterAsync(Encounter encounterToBeUpdated);
