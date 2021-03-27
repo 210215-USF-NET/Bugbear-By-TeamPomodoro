@@ -29,13 +29,13 @@ namespace BBREST.Controllers
         }
 
         // GET api/<UserController>/5
-        //[HttpGet("{name}")]
-        //public async Task<IActionResult> GetUserByNameAsync(string name)
-        //{
-        //    var user = await _bugbearBL.GetUserByNameAsync(name);
-        //    if (user == null) return NotFound();
-        //    return Ok(user);
-        //}
+        [HttpGet("{email}")]
+        public async Task<IActionResult> GetUserByEmailAsync(string email)
+        {
+            var user = await _bugbearBL.GetUserByEmailAsync(email);
+            if (user == null) return NotFound();
+            return Ok(user);
+        }
 
         // POST api/<UserController>
         [HttpPost]
