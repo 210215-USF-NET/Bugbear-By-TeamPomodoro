@@ -28,8 +28,9 @@ namespace BBREST.Controllers
             return Ok(await _bugbearBL.GetCampaignsAsync());
         }
 
-        // GET api/<CampaignController>/5
+        // GET api/<CampaignController>/name
         [HttpGet("{name}")]
+        [Produces("application/json")]
         public async Task<IActionResult> GetCampaignByNameAsync(string name)
         {
             var campaign = await _bugbearBL.GetCampaignByNameAsync(name);
@@ -69,11 +70,11 @@ namespace BBREST.Controllers
 
         // DELETE api/<CampaignController>/5
         [HttpDelete("{campaign}")]
-        public async Task<IActionResult> DeleteCampaignAsync(Campaign campaign)
+        public async Task<IActionResult> DeleteCampaignAsync(string campaign)
         {
             try
             {
-                await _bugbearBL.DeleteCampaignAsync(campaign);
+                await _bugbearBL.DeleteCampaignAsync(await _bugbearBL.GetCampaignByNameAsync(campaign));
                 return NoContent();
             }
             catch
