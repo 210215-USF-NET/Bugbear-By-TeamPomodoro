@@ -61,6 +61,8 @@ namespace BBBL
             return await _repo.AddUserAsync(newUser);
         }
 
+
+
         public async Task<Campaign> DeleteCampaignAsync(Campaign newCampaign)
         {
             return await _repo.DeleteCampaignAsync(newCampaign);
@@ -105,6 +107,8 @@ namespace BBBL
         {
             return await _repo.DeleteUserAsync(newUser);
         }
+
+
 
         public async Task<List<Campaign>> GetCampaignsAsync()
         {
@@ -161,14 +165,49 @@ namespace BBBL
         {
             return await _repo.GetUserByEmailAsync(email);
         }
-        public async Task<Character> UpdateCharacterAsync(Character character2BUpdated)
+
+
+
+        public async Task<Campaign> UpdateCampaignAsync(Campaign campaignToBeUpdated)
         {
-            return await _repo.UpdateCharacterAsync(character2BUpdated);
+            return await _repo.UpdateCampaignAsync(campaignToBeUpdated);
+        }
+        public async Task<Character> UpdateCharacterAsync(Character characterToBeUpdated)
+        {
+            return await _repo.UpdateCharacterAsync(characterToBeUpdated);
+        }
+        public async Task<Encounter> UpdateEncounterAsync(Encounter encounterToBeUpdated)
+        {
+            return await _repo.UpdateEncounterAsync(encounterToBeUpdated);
         }
 
+        public async Task<Item> UpdateItemAsync(Item itemToBeUpdated)
+        {
+            return await _repo.UpdateItemAsync(itemToBeUpdated);
+        }
+
+        public async Task<Location> UpdateLocationAsync(Location locationToBeUpdated)
+        {
+            return await _repo.UpdateLocationAsync(locationToBeUpdated);
+        }
+
+        public async Task<Map> UpdateMapAsync(Map mapToBeUpdated)
+        {
+            return await _repo.UpdateMapAsync(mapToBeUpdated);
+        }
+
+        public async Task<NPC> UpdateNPCAsync(NPC npcToBeUpdated)
+        {
+            return await _repo.UpdateNPCAsync(npcToBeUpdated);
+        }
         public async Task<Story> UpdateStoryAsync(Story storyToBeUpdated)
         {
             return await _repo.UpdateStoryAsync(storyToBeUpdated);
         }
+
+        public async Task<User> UpdateUserAsync(User userToBeUpdated)
+        {
+            return await _repo.UpdateUserAsync(userToBeUpdated);
+        } 
     }
 }

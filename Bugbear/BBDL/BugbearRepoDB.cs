@@ -223,15 +223,81 @@ namespace BBDL
             return await _context.Users.FirstOrDefaultAsync(user => user.Email == email);
         }
 
-        public async Task<Character> UpdateCharacterAsync(Character character2BUpdated)
+        public async Task<Campaign> UpdateCampaignAsync(Campaign campaignToBeUpdated)
         {
-            Character oldCharacter = await _context.Characters.FindAsync(character2BUpdated.CharacterID);
-            _context.Entry(oldCharacter).CurrentValues.SetValues(character2BUpdated);
+            Campaign oldCampaign = await _context.Campaigns.FindAsync(campaignToBeUpdated.CampaignID);
+            _context.Entry(oldCampaign).CurrentValues.SetValues(campaignToBeUpdated);
 
             await _context.SaveChangesAsync();
 
             _context.ChangeTracker.Clear();
-            return character2BUpdated;
+            return campaignToBeUpdated;
+        }
+
+        public async Task<Character> UpdateCharacterAsync(Character characterToBeUpdated)
+        {
+            Character oldCharacter = await _context.Characters.FindAsync(characterToBeUpdated.CharacterID);
+            _context.Entry(oldCharacter).CurrentValues.SetValues(characterToBeUpdated);
+
+            await _context.SaveChangesAsync();
+
+            _context.ChangeTracker.Clear();
+            return characterToBeUpdated;
+        }
+
+        public async Task<Encounter> UpdateEncounterAsync(Encounter encounterToBeUpdated)
+        {
+            Encounter oldEncounter = await _context.Encounters.FindAsync(encounterToBeUpdated.EncounterID);
+            _context.Entry(oldEncounter).CurrentValues.SetValues(encounterToBeUpdated);
+
+            await _context.SaveChangesAsync();
+
+            _context.ChangeTracker.Clear();
+            return encounterToBeUpdated;
+        }
+
+        public async Task<Item> UpdateItemAsync(Item itemToBeUpdated)
+        {
+            Item oldItem = await _context.Items.FindAsync(itemToBeUpdated.ItemID);
+            _context.Entry(oldItem).CurrentValues.SetValues(itemToBeUpdated);
+
+            await _context.SaveChangesAsync();
+
+            _context.ChangeTracker.Clear();
+            return itemToBeUpdated;
+        }
+
+        public async Task<Location> UpdateLocationAsync(Location locationToBeUpdated)
+        {
+            Location oldLocation = await _context.Locations.FindAsync(locationToBeUpdated.LocationID);
+            _context.Entry(oldLocation).CurrentValues.SetValues(locationToBeUpdated);
+
+            await _context.SaveChangesAsync();
+
+            _context.ChangeTracker.Clear();
+            return locationToBeUpdated;
+        }
+
+        public async Task<Map> UpdateMapAsync(Map mapToBeUpdated)
+        {
+            Map oldMap = await _context.Maps.FindAsync(mapToBeUpdated.MapID);
+            _context.Entry(oldMap).CurrentValues.SetValues(mapToBeUpdated);
+
+            await _context.SaveChangesAsync();
+
+            _context.ChangeTracker.Clear();
+            return mapToBeUpdated;
+        }
+
+        public async Task<NPC> UpdateNPC(NPC npcToBeUpdated)
+        {
+            NPC oldNPC = await _context.NPCs.FindAsync(npcToBeUpdated.NPCID);
+            _context.Entry(oldNPC).CurrentValues.SetValues(npcToBeUpdated);
+
+            await _context.SaveChangesAsync();
+
+            _context.ChangeTracker.Clear();
+            return npcToBeUpdated;
         }
 
         public async Task<Story> UpdateStoryAsync(Story storyToBeUpdated)
@@ -243,6 +309,17 @@ namespace BBDL
 
             _context.ChangeTracker.Clear();
             return storyToBeUpdated;
+        }
+
+        public async Task<User> UpdateUserAsync(User userToBeUpdated)
+        {
+            User oldUser = await _context.Users.FindAsync(userToBeUpdated.UserID);
+            _context.Entry(oldUser).CurrentValues.SetValues(userToBeUpdated);
+
+            await _context.SaveChangesAsync();
+
+            _context.ChangeTracker.Clear();
+            return userToBeUpdated;
         }
     }
 }

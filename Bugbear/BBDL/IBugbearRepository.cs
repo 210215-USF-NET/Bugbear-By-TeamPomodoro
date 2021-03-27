@@ -36,7 +36,14 @@ namespace BBDL
         Task<Story> GetStoryByIDAsync(int storyID);
         Task<List<User>> GetUsersAsync();
         Task<User> GetUserByEmailAsync(string email);
-        Task<Character> UpdateCharacterAsync(Character character2BUpdated);
+        Task<Campaign> UpdateCampaignAsync(Campaign campaignToBeUpdated);
+        Task<Character> UpdateCharacterAsync(Character characterToBeUpdated);
+        Task<Encounter> UpdateEncounterAsync(Encounter encounterToBeUpdated);
+        Task<Item> UpdateItemAsync(Item itemToBeUpdated);
+        Task<Location> UpdateLocationAsync(Location locationToBeUpdated);
+        Task<Map> UpdateMapAsync(Map mapToBeUpdated);
+        Task<NPC> UpdateNPCAsync(NPC npcToBeUpdated);
         Task<Story> UpdateStoryAsync(Story storyToBeUpdated);
+        Task<User> UpdateUserAsync(User userToBeUpdated);
     }
 }
