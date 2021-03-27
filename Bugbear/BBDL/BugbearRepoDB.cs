@@ -159,6 +159,11 @@ namespace BBDL
             // This should return all campaign in our database.
             return await _context.Campaigns.Select(c => c).ToListAsync();
         }
+        public async Task<Campaign> GetCampaignByIDAsync(int id)
+        {
+            //returns a Campaign given said campaign's ID
+            return await _context.Campaigns.FirstOrDefaultAsync(c => c.CampaignID == id);
+        }
 
         public async Task<List<Character>> GetCharactersAsync()
         {
@@ -175,11 +180,21 @@ namespace BBDL
             // This should return all Encounters in our database.
             return await _context.Encounters.Select(e => e).ToListAsync();
         }
+        public async Task<Encounter> GetEncounterByIDAsync(int id)
+        {
+            //returns the proper Encounter from the database, given said Encounter's ID
+            return await _context.Encounters.FirstOrDefaultAsync(e => e.EncounterID == id);
+        }
 
         public async Task<List<Item>> GetItemsAsync()
         {
             // This should get all Items in our database.
             return await _context.Items.Select(i => i).ToListAsync();
+        }
+        public async Task<Item> GetItemByNameAsync(string name)
+        {
+            //returns the proper Item from the database, given said Item's name
+            return await _context.Items.FirstOrDefaultAsync(i => i.ItemName.Equals(name));
         }
 
         public async Task<List<Location>> GetLocationsAsync()
@@ -187,11 +202,21 @@ namespace BBDL
             // This should get all Locations in our database.
             return await _context.Locations.Select(l => l).ToListAsync();
         }
+        public async Task<Location> GetLocationByNameAsync(string name)
+        {
+            // returns the proper Location from the database, given said Location's name
+            return await _context.Locations.FirstOrDefaultAsync(l => l.LocationName.Equals(name));
+        }
 
         public async Task<List<Map>> GetMapAsync()
         {
             // This should get all Map in our database.
             return await _context.Maps.Select(i => i).ToListAsync();
+        }
+        public async Task<Map> GetMapByTitleAsync(string title)
+        {
+            // returns the proper Map from the database, given said Map's name
+            return await _context.Maps.FirstOrDefaultAsync(m => m.MapTitle.Equals(title));
         }
 
         public async Task<List<NPC>> GetNPCAsync()
@@ -199,8 +224,16 @@ namespace BBDL
             // This should get all Npcs in our database.
             return await _context.NPCs.Select(n => n).ToListAsync();
         }
-
-        
+        public async Task<NPC> GetNPCByIDAsync(int id)
+        {
+            // This method returns the proper NPC from our database, given said NPC's id
+            return await _context.NPCs.FirstOrDefaultAsync(n => n.NPCID == id);
+        }
+        public async Task<NPC> GetNPCByNameAsync(string name)
+        {
+            // This method returns the proper NPC from our database, given said NPC's name
+            return await _context.NPCs.FirstOrDefaultAsync(n => n.NPCName.Equals(name));
+        }
 
         public async Task<List<Story>> GetStoriesAsync()
         {
@@ -291,7 +324,7 @@ namespace BBDL
             return mapToBeUpdated;
         }
 
-        public async Task<NPC> UpdateNPC(NPC npcToBeUpdated)
+        public async Task<NPC> UpdateNPCAsync(NPC npcToBeUpdated)
         {
             NPC oldNPC = await _context.NPCs.FindAsync(npcToBeUpdated.NPCID);
             _context.Entry(oldNPC).CurrentValues.SetValues(npcToBeUpdated);

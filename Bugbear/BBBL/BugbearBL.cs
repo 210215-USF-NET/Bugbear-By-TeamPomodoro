@@ -159,9 +159,9 @@ namespace BBBL
         {
             return await _repo.GetMapAsync();
         }
-        public async Task<Map> GetMapByNameAsync(string name)
+        public async Task<Map> GetMapByTitleAsync(string title)
         {
-            return await _repo.GetMapByNameAsync(name);
+            return await _repo.GetMapByTitleAsync(title);
         }
 
         public async Task<List<NPC>> GetNPCAsync()
