@@ -42,7 +42,7 @@ namespace BBDL
         Task<List<Location>> GetLocationsAsync();
         Task<Location> GetLocationByNameAsync(string name);
         Task<List<Map>> GetMapAsync();
-        Task<Map> GetMapByNameAsync(string name);
+        Task<Map> GetMapByTitleAsync(string title);
         Task<List<NPC>> GetNPCAsync();
         Task<NPC> GetNPCByIDAsync(int id);
         Task<NPC> GetNPCByNameAsync(string name);
