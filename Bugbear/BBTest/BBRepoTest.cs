@@ -285,7 +285,7 @@ namespace BBTest
                 var result = assertContext.Users.Select(e => e).OrderBy(e => e.UserID).LastOrDefaultAsync();
 
                 Assert.NotNull(result.Result);
-                Assert.Equal("Email", result.Result.Email);
+                Assert.Equal("jack.long@revature.net", result.Result.Email);
 
             }
         }
