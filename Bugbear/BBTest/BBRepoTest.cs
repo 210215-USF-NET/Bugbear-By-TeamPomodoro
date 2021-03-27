@@ -274,10 +274,7 @@ namespace BBTest
                     new User
                     {
                         UserID = 999,
-                        FirstName = "Jack",
-                        LastName = "Long",
-                        Email = "jack.long@revature.net",
-                        Phone = "555-867-5309"
+                        Email = "jack.long@revature.net"
                     }
                 );
             }
@@ -288,7 +285,7 @@ namespace BBTest
                 var result = assertContext.Users.Select(e => e).OrderBy(e => e.UserID).LastOrDefaultAsync();
 
                 Assert.NotNull(result.Result);
-                Assert.Equal("Jack", result.Result.FirstName);
+                Assert.Equal("Email", result.Result.Email);
 
             }
         }
@@ -669,10 +666,7 @@ namespace BBTest
                     new User
                     {
                         UserID = 1,
-                        FirstName = "Griffin",
-                        LastName = "McElroy",
-                        Email = "griffin@themcelroy.family",
-                        Phone = "111-222-3333"
+                        Email = "griffin@themcelroy.family"
                     }
                 );
             }
@@ -920,34 +914,22 @@ namespace BBTest
                     new User
                     {
                         UserID = 1,
-                        FirstName = "Griffin",
-                        LastName = "McElroy",
-                        Email = "griffin@themcelroy.family",
-                        Phone = "111-222-3333"
+                        Email = "griffin@themcelroy.family"
                     },
                     new User
                     {
-                        UserID = 2,
-                        FirstName = "Justin",
-                        LastName = "McElroy",
-                        Email = "justin@themcelroy.family",
-                        Phone = "222-333-4444"
+                        UserID = 2
+                        Email = "justin@themcelroy.family"
                     },
                     new User
                     {
                         UserID = 3,
-                        FirstName = "Travis",
-                        LastName = "McElroy",
-                        Email = "travis@themcelroy.family",
-                        Phone = "333-444-5555"
+                        Email = "travis@themcelroy.family"
                     },
                     new User
                     {
                         UserID = 4,
-                        FirstName = "Clint",
-                        LastName = "McElroy",
-                        Email = "clint@themcelroy.family",
-                        Phone = "444-555-6666"
+                        Email = "clint@themcelroy.family"
                     }
                 );
                 context.SaveChanges();
