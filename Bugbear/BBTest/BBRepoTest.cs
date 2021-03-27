@@ -918,7 +918,7 @@ namespace BBTest
                     },
                     new User
                     {
-                        UserID = 2
+                        UserID = 2,
                         Email = "justin@themcelroy.family"
                     },
                     new User
