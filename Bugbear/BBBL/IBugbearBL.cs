@@ -33,8 +33,10 @@ namespace BBBL
         Task<List<Map>> GetMapAsync();
         Task<List<NPC>> GetNPCAsync();
         Task<List<Story>> GetStoriesAsync();
+        Task<Story> GetStoryByIDAsync(int storyID);
         Task<List<User>> GetUsersAsync();
         Task<User> GetUserByEmailAsync(string email);
         Task<Character> UpdateCharacterAsync(Character character2BUpdated);
+        Task<Story> UpdateStoryAsync(Story storyToBeUpdated);
     }
 }

@@ -206,6 +206,12 @@ namespace BBDL
             return await _context.Stories.Select(s => s).ToListAsync();
         }
 
+        public async Task<Story> GetStoryByIDAsync(int storyID)
+        {
+            //This should get a single story, identified by the story ID.
+            return await _context.Stories.FirstOrDefaultAsync(s => s.StoryID == storyID);
+        }
+
         public async Task<List<User>> GetUsersAsync()
         {
             // This should get all Users in our database.
@@ -226,6 +232,17 @@ namespace BBDL
 
             _context.ChangeTracker.Clear();
             return character2BUpdated;
+        }
+
+        public async Task<Story> UpdateStoryAsync(Story storyToBeUpdated)
+        {
+            Story oldStory = await _context.Stories.FindAsync(storyToBeUpdated.StoryID);
+            _context.Entry(oldStory).CurrentValues.SetValues(storyToBeUpdated);
+
+            await _context.SaveChangesAsync();
+
+            _context.ChangeTracker.Clear();
+            return storyToBeUpdated;
         }
     }
 }

@@ -148,6 +148,10 @@ namespace BBBL
         {
             return await _repo.GetStoriesAsync();
         }
+        public async Task<Story> GetStoryByIDAsync(int storyID)
+        {
+            return await _repo.GetStoryByIDAsync(storyID);
+        }
 
         public async Task<List<User>> GetUsersAsync()
         {
@@ -160,6 +164,11 @@ namespace BBBL
         public async Task<Character> UpdateCharacterAsync(Character character2BUpdated)
         {
             return await _repo.UpdateCharacterAsync(character2BUpdated);
+        }
+
+        public async Task<Story> UpdateStoryAsync(Story storyToBeUpdated)
+        {
+            return await _repo.UpdateStoryAsync(storyToBeUpdated);
         }
     }
 }
