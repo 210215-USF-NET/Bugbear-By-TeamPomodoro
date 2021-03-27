@@ -118,6 +118,9 @@ namespace BBBL
         {
             return await _repo.GetCampaignByIDAsync(id);
         }
+        public async Task<Campaign> GetCampaignByNameAsync(string name) {
+            return await _repo.GetCampaignByNameAsync(name);
+        }
 
         public async Task<List<Character>> GetCharactersAsync()
         {

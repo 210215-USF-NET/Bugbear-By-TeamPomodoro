@@ -159,6 +159,10 @@ namespace BBDL
             // This should return all campaign in our database.
             return await _context.Campaigns.Select(c => c).ToListAsync();
         }
+        public async Task<Campaign> GetCampaignByNameAsync(string name)
+        {
+            return await _context.Campaigns.FirstOrDefaultAsync(campaign => campaign.CampaignName == name);
+        }
 
         public async Task<List<Character>> GetCharactersAsync()
         {

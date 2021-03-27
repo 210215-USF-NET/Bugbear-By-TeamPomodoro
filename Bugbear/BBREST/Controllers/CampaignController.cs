@@ -29,13 +29,13 @@ namespace BBREST.Controllers
         }
 
         // GET api/<CampaignController>/5
-        //[HttpGet("{name}")]
-        //public async Task<IActionResult> GetCampaignByNameAsync(string name)
-        //{
-        //    var campaign = await _bugbearBL.GetCampaignByNameAsync(name);
-        //    if (campaign == null) return NotFound();
-        //    return Ok(campaign);
-        //}
+        [HttpGet("{name}")]
+        public async Task<IActionResult> GetCampaignByNameAsync(string name)
+        {
+            var campaign = await _bugbearBL.GetCampaignByNameAsync(name);
+            if (campaign == null) return NotFound();
+            return Ok(campaign);
+        }
 
         // POST api/<CampaignController>
         [HttpPost]
@@ -53,19 +53,19 @@ namespace BBREST.Controllers
         }
 
         // PUT api/<CampaignController>/5
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> UpdateCampaignAsync(int id, [FromBody] Campaign campaign)
-        //{
-        //    try
-        //    {
-        //        await _bugbearBL.UpdateCampaignAsync(campaign);
-        //        return NoContent();
-        //    }
-        //    catch
-        //    {
-        //        return StatusCode(500);
-        //    }
-        //}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCampaignAsync(int id, [FromBody] Campaign campaign)
+        {
+            try
+            {
+                await _bugbearBL.UpdateCampaignAsync(campaign);
+                return NoContent();
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
+        }
 
         // DELETE api/<CampaignController>/5
         [HttpDelete("{campaign}")]
