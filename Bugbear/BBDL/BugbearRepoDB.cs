@@ -362,9 +362,9 @@ namespace BBDL
             return userToBeUpdated;
         }
 
-        public async Task<List<Character>> GetCharactersByUserIDAsync(int id)
+        public async Task<List<Character>> GetCharactersByUserIDAsync(int userID)
         {
-            return await _context.Characters.Where(character => character.UserID == id).ToListAsync();
+            return await _context.Characters.Where(character => character.UserID == userID).ToListAsync();
         }
     }
 }

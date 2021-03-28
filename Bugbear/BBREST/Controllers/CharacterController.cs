@@ -41,11 +41,9 @@ namespace BBREST.Controllers
         // GET api/<CharacterController>/5
         [HttpGet("{UserID}")]
         [Produces("application/json")]
-        public async Task<IActionResult> GetCharactersByUserIDAsync(int id)
+        public async Task<IActionResult> GetCharactersByUserIDAsync(int userID)
         {
-            var character = await _bugbearBL.GetCharactersByUserIDAsync(id);
-            if (character == null) return NotFound();
-            return Ok(character);
+            return Ok(await _bugbearBL.GetCharactersByUserIDAsync(userID));
         }
 
         // POST api/<CharacterController>
