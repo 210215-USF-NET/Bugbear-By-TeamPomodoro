@@ -241,5 +241,10 @@ namespace BBBL
         {
             return await _repo.UpdateUserAsync(userToBeUpdated);
         }
+
+        public async Task<List<Character>> GetCharactersByUserIDAsync(int id)
+        {
+            return await _repo.GetCharactersByUserIDAsync(id);
+        }
     }
 }

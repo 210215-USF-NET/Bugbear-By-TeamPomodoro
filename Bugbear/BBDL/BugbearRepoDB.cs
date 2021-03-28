@@ -361,5 +361,10 @@ namespace BBDL
             _context.ChangeTracker.Clear();
             return userToBeUpdated;
         }
+
+        public async Task<List<Character>> GetCharactersByUserIDAsync(int id)
+        {
+            return await _context.Characters.Where(character => character.UserID == id).ToListAsync();
+        }
     }
 }
