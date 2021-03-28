@@ -364,7 +364,7 @@ namespace BBDL
 
         public async Task<List<Character>> GetCharactersByUserIDAsync(int userID)
         {
-            return await _context.Characters.Where(character => character.UserID == userID).ToListAsync();
+            return await _context.Characters.AsNoTracking().Where(character => character.UserID == userID).ToListAsync();
         }
     }
 }
