@@ -28,16 +28,16 @@ namespace BBREST.Controllers
             return Ok(await _bugbearBL.GetStoriesAsync());
         }
 
-        // GET api/<StoryController>/5
-        //[HttpGet("{name}")]
-        //public async Task<IActionResult> GetStoryByNameAsync(string name)
-        //{
-        //    var story = await _bugbearBL.GetStoryByNameAsync(name);
-        //    if (story == null) return NotFound();
-        //    return Ok(story);
-        //}
+        //GET: api/<StoryController>/5
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetStoryByIDAsync(int id)
+        {
+            var story = await _bugbearBL.GetStoryByIDAsync(id);
+            if (story == null) return NotFound();
+            return Ok(story);
+        }
 
-        // POST api/<StoryController>
+        //POST api/<StoryController>
         [HttpPost]
         public async Task<IActionResult> AddAStoryAsync([FromBody] Story story)
         {
@@ -53,19 +53,19 @@ namespace BBREST.Controllers
         }
 
         // PUT api/<StoryController>/5
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> UpdateStoryAsync(int id, [FromBody] Story story)
-        //{
-        //    try
-        //    {
-        //        await _bugbearBL.UpdateStoryAsync(story);
-        //        return NoContent();
-        //    }
-        //    catch
-        //    {
-        //        return StatusCode(500);
-        //    }
-        //}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateStoryAsync(int id, [FromBody] Story story)
+        {
+            try
+            {
+                await _bugbearBL.UpdateStoryAsync(story);
+                return NoContent();
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
+        }
 
         // DELETE api/<StoryController>/5
         [HttpDelete("{story}")]
