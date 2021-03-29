@@ -28,10 +28,10 @@ namespace BBREST.Controllers
             return Ok(await _bugbearBL.GetCharactersAsync());
         }
 
-        // GET api/<CharacterController>/5
+        // GET api/<CharacterController>/id
         [HttpGet("{id}")]
         [Produces("application/json")]
-        public async Task<IActionResult> GetCharactersByIDAsync(int id)
+        public async Task<IActionResult> GetCharacterByIDAsync(int id)
         {
             var character = await _bugbearBL.GetCharacterByIDAsync(id);
             if (character == null) return NotFound();
