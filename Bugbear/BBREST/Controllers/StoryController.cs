@@ -68,7 +68,7 @@ namespace BBREST.Controllers
         }
 
         // DELETE api/<StoryController>/5
-        [HttpDelete("{story}")]
+        [HttpDelete("{storyID}")]
         public async Task<IActionResult> DeleteStoryAsync(int storyID)
         {
             try
