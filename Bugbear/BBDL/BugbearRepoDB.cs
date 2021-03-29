@@ -159,17 +159,24 @@ namespace BBDL
             // This should return all campaign in our database.
             return await _context.Campaigns
                 .Include(campaign => campaign.CampaignUsers)
+                .AsNoTracking()
                 .Select(c => c).ToListAsync();
         }
         public async Task<Campaign> GetCampaignByIDAsync(int id)
         {
             //returns a Campaign given said campaign's ID
-            return await _context.Campaigns.FirstOrDefaultAsync(c => c.CampaignID == id);
+            return await _context.Campaigns
+                .Include(c => c.CampaignUsers)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(c => c.CampaignID == id);
         }
         public async Task<Campaign> GetCampaignByNameAsync(string name)
         {
             //returns a Campaign given said Campaign's Name
-            return await _context.Campaigns.FirstOrDefaultAsync(c => c.CampaignName.Equals(name));
+            return await _context.Campaigns
+                .Include(c => c.CampaignUsers)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(c => c.CampaignName.Equals(name));
         }
 
         public async Task<List<Character>> GetCharactersAsync()
