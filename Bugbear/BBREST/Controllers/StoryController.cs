@@ -69,11 +69,11 @@ namespace BBREST.Controllers
 
         // DELETE api/<StoryController>/5
         [HttpDelete("{story}")]
-        public async Task<IActionResult> DeleteStoryAsync(Story story)
+        public async Task<IActionResult> DeleteStoryAsync(int storyID)
         {
             try
             {
-                await _bugbearBL.DeleteStoryAsync(story);
+                await _bugbearBL.DeleteStoryAsync( await _bugbearBL.GetStoryByIDAsync(storyID));
                 return NoContent();
             }
             catch
