@@ -36,7 +36,7 @@ namespace BBBL
         Task<List<Character>> GetCharactersAsync();
         Task<List<Character>> GetCharactersByUserIDAsync(int userID);
         Task<Character> GetCharacterByNameAsync(string name);
-        Task<Character> GetCharacterByID(int id);
+        Task<Character> GetCharacterByIDAsync(int id);
         Task<List<Encounter>> GetEncountersAsync();
         Task<Encounter> GetEncounterByIDAsync(int id);
         Task<List<Item>> GetItemsAsync();

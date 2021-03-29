@@ -38,6 +38,16 @@ namespace BBREST.Controllers
             return Ok(campaign);
         }
 
+        // GET api/<CampaignController>/id
+        [HttpGet("{campaignID}")]
+        [Produces("application/json")]
+        public async Task<IActionResult> GetCampaignByIDAsync(int id)
+        {
+            var campaign = await _bugbearBL.GetCampaignByIDAsync(id);
+            if (campaign == null) return NotFound();
+            return Ok(campaign);
+        }
+
         // POST api/<CampaignController>
         [HttpPost]
         public async Task<IActionResult> AddACampaignAsync([FromBody] Campaign campaign)

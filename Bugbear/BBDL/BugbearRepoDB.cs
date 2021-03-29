@@ -189,7 +189,7 @@ namespace BBDL
             return await _context.Characters.FirstOrDefaultAsync(character => character.CharacterName == name);
         }
 
-        public async Task<Character> GetCharacterByID(int id)
+        public async Task<Character> GetCharacterByIDAsync(int id)
         {
             return await _context.Characters.FirstOrDefaultAsync(character => character.CharacterID == id);
         }
