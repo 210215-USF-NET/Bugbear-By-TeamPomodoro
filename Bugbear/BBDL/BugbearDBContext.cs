@@ -60,9 +60,6 @@ namespace BBDL
             modelBuilder.Entity<User>()
                 .Property(u => u.UserID)
                 .ValueGeneratedOnAdd();
-
-            modelBuilder.Entity<Campaign>()
-               .HasMany(c => c.CampaignUsers);
         }
     }
 }
