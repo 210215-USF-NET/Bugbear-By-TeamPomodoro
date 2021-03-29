@@ -1,23 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
-using BBModels;
-using System;
+﻿using BBModels;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BBDL
 {
     public class BugbearDBContext : DbContext
     {
-        public BugbearDBContext (DbContextOptions options) : base(options)
+        public BugbearDBContext(DbContextOptions options) : base(options)
         {
-
         }
 
-        protected BugbearDBContext ()
+        protected BugbearDBContext()
         {
-
         }
 
         public DbSet<Campaign> Campaigns { get; set; }
@@ -60,6 +54,9 @@ namespace BBDL
             modelBuilder.Entity<User>()
                 .Property(u => u.UserID)
                 .ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Campaign>()
+                .HasMany(c => c.CampaignUsers);
         }
     }
 }

@@ -34,7 +34,9 @@ namespace BBTest
                         CampaignID = 6,
                         CampaignName = "Cool New Campaign",
                         Description = "A cool new campaign that only my friends get to enjoy!",
-                        GameMasterID = 2
+                        GameMasterID = 2,
+                        CampaignUsers = {
+                        }
                     }
                 );
             }
@@ -46,7 +48,6 @@ namespace BBTest
 
                 Assert.NotNull(result.Result);
                 Assert.Equal("Cool New Campaign", result.Result.CampaignName);
-
             }
         }
 
@@ -86,7 +87,6 @@ namespace BBTest
 
                 Assert.NotNull(result.Result);
                 Assert.Equal("Lola Bunny", result.Result.CharacterName);
-
             }
         }
 
@@ -118,7 +118,6 @@ namespace BBTest
 
                 Assert.NotNull(result.Result);
                 Assert.Equal("Portals", result.Result.EncounterTitle);
-
             }
         }
 
@@ -149,7 +148,6 @@ namespace BBTest
 
                 Assert.NotNull(result.Result);
                 Assert.Equal("Infinity Gauntlet", result.Result.ItemName);
-
             }
         }
 
@@ -180,14 +178,12 @@ namespace BBTest
 
                 Assert.NotNull(result.Result);
                 Assert.Equal("Avengers Tower", result.Result.LocationName);
-
             }
         }
 
         //[Fact]
         //public void AddMapShouldAddNewMap()
         //{
-
         //}
 
         [Fact]
@@ -226,7 +222,6 @@ namespace BBTest
 
                 Assert.NotNull(result.Result);
                 Assert.Equal("Lola Bunny", result.Result.NPCName);
-
             }
         }
 
@@ -257,7 +252,6 @@ namespace BBTest
 
                 Assert.NotNull(result.Result);
                 Assert.Equal("Thanos' Quest", result.Result.StoryTitle);
-
             }
         }
 
@@ -286,7 +280,6 @@ namespace BBTest
 
                 Assert.NotNull(result.Result);
                 Assert.Equal("jack.long@revature.net", result.Result.Email);
-
             }
         }
 
@@ -303,7 +296,7 @@ namespace BBTest
 
                 //Assert
                 Assert.NotNull(campaigns);
-                Assert.Equal(2, 2/*campaigns.Result.Count*/);
+                Assert.Equal(2, campaigns.Result.Count);
             }
         }
 
@@ -324,7 +317,7 @@ namespace BBTest
             }
         }
 
-        [Fact] 
+        [Fact]
         public void GetEncountersShouldReturnAllEncounters()
         {
             using (var context = new BugbearDBContext(options))
@@ -378,7 +371,6 @@ namespace BBTest
         //[Fact]
         //public void GetMapsShouldReturnAllMaps()
         //{
-
         //}
 
         [Fact]
@@ -447,7 +439,9 @@ namespace BBTest
                         CampaignID = 1,
                         CampaignName = "Balance",
                         Description = "Three friends meet in a pub looking for work.  One thing leads to another and they get sucked into a Groundhog Day loop except it's in a Old Western Town constantly about to be destroyed and they're being followed by mysterious red ghosts.",
-                        GameMasterID = 4
+                        GameMasterID = 4,
+                        CampaignUsers = {
+                        }
                     }
                 );
             }
@@ -553,6 +547,7 @@ namespace BBTest
                 Assert.Single(items);
             }
         }
+
         [Fact]
         public void DeleteLocationRemovesTheLocation()
         {
@@ -580,11 +575,10 @@ namespace BBTest
                 Assert.Single(locations);
             }
         }
-        
+
         //[Fact]
         //public void DeleteMapRemovesTheMap()
         //{
-
         //}
 
         [Fact]
@@ -692,14 +686,19 @@ namespace BBTest
                         CampaignID = 1,
                         CampaignName = "Balance",
                         Description = "Three friends meet in a pub looking for work.  One thing leads to another and they get sucked into a Groundhog Day loop except it's in a Old Western Town constantly about to be destroyed and they're being followed by mysterious red ghosts.",
-                        GameMasterID = 4
+                        GameMasterID = 4,
+                        CampaignUsers = {
+                        }
                     },
                     new Campaign
                     {
                         CampaignID = 2,
                         CampaignName = "Graduation",
                         Description = "Three boys sign up for hero school and end up as main characters in the weirdest and most rail-roaded war plot ever written.",
-                        GameMasterID = 2
+                        GameMasterID = 2,
+                        CampaignUsers = {
+
+                        }
                     }
                 );
 
@@ -887,7 +886,6 @@ namespace BBTest
                         Intelligence = 4,
                         Wisdom = 6,
                         Charisma = 3
-
                     }
                 );
 

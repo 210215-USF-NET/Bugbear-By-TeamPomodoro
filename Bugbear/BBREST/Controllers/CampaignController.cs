@@ -1,10 +1,7 @@
 ﻿using BBBL;
 using BBModels;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -17,10 +14,12 @@ namespace BBREST.Controllers
     public class CampaignController : ControllerBase
     {
         private readonly IBugbearBL _bugbearBL;
+
         public CampaignController(IBugbearBL bugbearBL)
         {
             _bugbearBL = bugbearBL;
         }
+
         // GET: api/<CampaignController>
         [HttpGet]
         public async Task<IActionResult> GetCampaignsAsync()

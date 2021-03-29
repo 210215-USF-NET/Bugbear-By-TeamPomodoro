@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BBModels
 {
@@ -13,7 +8,6 @@ namespace BBModels
         public string CampaignName { get; set; }
         public string Description { get; set; }
         public int GameMasterID { get; set; }
-        [NotMapped]
-        public List<int> CampaignUsers { get; set; }
+        public List<User> CampaignUsers { get; set; }
     }
 }
