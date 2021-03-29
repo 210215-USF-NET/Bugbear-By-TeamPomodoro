@@ -182,6 +182,11 @@ namespace BBDL
             return await _context.Characters.FirstOrDefaultAsync(character => character.CharacterName == name);
         }
 
+        public async Task<Character> GetCharacterByID(int id)
+        {
+            return await _context.Characters.FirstOrDefaultAsync(character => character.CharacterID == id);
+        }
+
         public async Task<List<Encounter>> GetEncountersAsync()
         {
             // This should return all Encounters in our database.
