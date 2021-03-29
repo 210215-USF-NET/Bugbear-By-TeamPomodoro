@@ -157,7 +157,9 @@ namespace BBDL
         {
             // I think we should have an argument to get the campagin a certain user is associated with. So GetCampaigns(User user){}
             // This should return all campaign in our database.
-            return await _context.Campaigns.Select(c => c).ToListAsync();
+            return await _context.Campaigns
+                .Include(campaign => campaign.CampaignUsers)
+                .Select(c => c).ToListAsync();
         }
         public async Task<Campaign> GetCampaignByIDAsync(int id)
         {
