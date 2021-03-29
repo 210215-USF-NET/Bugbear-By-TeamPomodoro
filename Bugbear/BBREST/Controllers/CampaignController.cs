@@ -68,12 +68,12 @@ namespace BBREST.Controllers
         }
 
         // DELETE api/<CampaignController>/5
-        [HttpDelete("{campaign}")]
-        public async Task<IActionResult> DeleteCampaignAsync(string campaign)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCampaignAsync(int id)
         {
             try
             {
-                await _bugbearBL.DeleteCampaignAsync(await _bugbearBL.GetCampaignByNameAsync(campaign));
+                await _bugbearBL.DeleteCampaignAsync(await _bugbearBL.GetCampaignByIDAsync(id));
                 return NoContent();
             }
             catch
