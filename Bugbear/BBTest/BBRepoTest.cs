@@ -408,6 +408,23 @@ namespace BBTest
         }
 
         [Fact]
+        public void GetStoryByIDReturnsTheCorrectStory()
+        {
+            using (var context = new BugbearDBContext(options))
+            {
+                //Arrange
+                IBugbearRepository _repo = new BugbearRepoDB(context);
+
+                //Act
+                var story = _repo.GetStoryByIDAsync(1);
+
+                //Assert
+                Assert.NotNull(story);
+                Assert.Equal("Here there be Gerblins (1)", story.Result.StoryTitle);
+            }
+        }
+
+        [Fact]
         public void GetUsersShouldReturnAllUsers()
         {
             using (var context = new BugbearDBContext(options))
