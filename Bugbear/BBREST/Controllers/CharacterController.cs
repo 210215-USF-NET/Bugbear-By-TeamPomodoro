@@ -28,10 +28,10 @@ namespace BBREST.Controllers
             return Ok(await _bugbearBL.GetCharactersAsync());
         }
 
-        // GET api/<CharacterController>/5
+        // GET api/<CharacterController>/id
         [HttpGet("{id}")]
         [Produces("application/json")]
-        public async Task<IActionResult> GetCharactersByIDAsync(int id)
+        public async Task<IActionResult> GetCharacterByIDAsync(int id)
         {
             var character = await _bugbearBL.GetCharacterByIDAsync(id);
             if (character == null) return NotFound();
@@ -77,12 +77,12 @@ namespace BBREST.Controllers
         }
 
         // DELETE api/<CharacterController>/5
-        [HttpDelete("{name}")]
-        public async Task<IActionResult> DeleteCharacterAsync(string name)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCharacterAsync(int id)
         {
             try
             {
-                await _bugbearBL.DeleteCharacterAsync(await _bugbearBL.GetCharacterByNameAsync(name));
+                await _bugbearBL.DeleteCharacterAsync(await _bugbearBL.GetCharacterByIDAsync(id));
                 return NoContent();
             }
             catch
