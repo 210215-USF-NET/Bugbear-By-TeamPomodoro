@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BBDL.Migrations
 {
+    [ExcludeFromCodeCoverage]
     public partial class RelationshipAdd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

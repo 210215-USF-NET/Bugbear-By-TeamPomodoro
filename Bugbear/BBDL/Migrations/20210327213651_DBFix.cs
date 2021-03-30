@@ -2,6 +2,7 @@
 
 namespace BBDL.Migrations
 {
+    [ExcludeFromCodeCoverage]
     public partial class DBFix : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
