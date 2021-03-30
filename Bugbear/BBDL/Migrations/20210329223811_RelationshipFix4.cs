@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BBDL.Migrations
 {
+    [ExcludeFromCodeCoverage]
     public partial class RelationshipFix4 : Migration
     {
-        [ExcludeFromCodeCoverage]
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<int>(
