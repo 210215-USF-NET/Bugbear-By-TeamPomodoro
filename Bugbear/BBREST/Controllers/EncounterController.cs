@@ -37,6 +37,15 @@ namespace BBREST.Controllers
         //    return Ok(encounter);
         //}
 
+        // GET api/<EncounterController>/5
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetEncounterByIDAsync(int id)
+        {
+            var encounter = await _bugbearBL.GetEncounterByIDAsync(id);
+            if (encounter == null) return NotFound();
+            return Ok(encounter);
+        }
+
         // POST api/<EncounterController>
         [HttpPost]
         public async Task<IActionResult> AddAEncounterAsync([FromBody] Encounter encounter)
@@ -53,19 +62,19 @@ namespace BBREST.Controllers
         }
 
         // PUT api/<EncounterController>/5
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> UpdateEncounterAsync(int id, [FromBody] Encounter encounter)
-        //{
-        //    try
-        //    {
-        //        await _bugbearBL.UpdateEncounterAsync(encounter);
-        //        return NoContent();
-        //    }
-        //    catch
-        //    {
-        //        return StatusCode(500);
-        //    }
-        //}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateEncounterAsync(int id, [FromBody] Encounter encounter)
+        {
+            try
+            {
+                await _bugbearBL.UpdateEncounterAsync(encounter);
+                return NoContent();
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
+        }
 
         // DELETE api/<EncounterController>/5
         [HttpDelete("{encounter}")]
