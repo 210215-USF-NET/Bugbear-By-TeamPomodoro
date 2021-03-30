@@ -65,6 +65,7 @@ namespace BBTest
                         CharacterName = "Lola Bunny",
                         Money = 999,
                         HP = 666,
+                        UserID = 2,
                         XPLevel = 20,
                         Strength = 18,
                         Dexterity = 20,
