@@ -92,6 +92,11 @@ namespace BBDL
                 .HasMany(c => c.Items)
                 .WithOne(i => i.Character)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<User>()
+                .HasMany(c => c.Characters)
+                .WithOne(i => i.User)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

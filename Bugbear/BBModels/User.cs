@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace BBModels
 {
@@ -6,5 +7,6 @@ namespace BBModels
     {
         public int UserID { get; set; }
         public string Email { get; set; }
+        public List<Character> Characters { get; set; }
     }
 }

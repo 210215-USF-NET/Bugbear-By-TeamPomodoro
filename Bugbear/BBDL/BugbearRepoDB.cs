@@ -199,12 +199,14 @@ namespace BBDL
             // This should return all characters in our database.
             return await _context.Characters
                 .Include(c => c.Campaign)
+                .Include(c => c.User)
                 .Select(Character => Character).ToListAsync();
         }
         public async Task<Character> GetCharacterByNameAsync(string name)
         {
             return await _context.Characters
                 .Include(c => c.Campaign)
+                .Include(c => c.User)
                 .FirstOrDefaultAsync(character => character.CharacterName == name);
         }
 
@@ -212,6 +214,7 @@ namespace BBDL
         {
             return await _context.Characters
                 .Include(c => c.Campaign)
+                .Include(c => c.User)
                 .FirstOrDefaultAsync(character => character.CharacterID == id);
         }
 
@@ -315,12 +318,15 @@ namespace BBDL
         {
             // This should get all Users in our database.
             return await _context.Users
+                .Include(c => c.Characters)
                 .Select(u => u).ToListAsync();
         }
         public async Task<User> GetUserByEmailAsync(string email)
         {
             // This should get a certain User by email in our database.
-            return await _context.Users.FirstOrDefaultAsync(user => user.Email == email);
+            return await _context.Users
+                .Include(c => c.Characters)
+                .FirstOrDefaultAsync(user => user.Email == email);
         }
 
         public async Task<Campaign> UpdateCampaignAsync(Campaign campaignToBeUpdated)
