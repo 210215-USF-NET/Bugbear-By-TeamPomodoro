@@ -12,7 +12,7 @@ namespace BBModels
         public string CharacterName { get; set; }
         public List<Item> Items { get; set; }
         public int Money { get; set; }
-        public User User { get; set; }
+        public int UserID { get; set; }
 
         //========================================
         public int HP { get; set; }

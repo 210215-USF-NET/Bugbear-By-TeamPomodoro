@@ -199,14 +199,12 @@ namespace BBDL
             // This should return all characters in our database.
             return await _context.Characters
                 .Include(c => c.Campaign)
-                .Include(c => c.User)
                 .Select(Character => Character).ToListAsync();
         }
         public async Task<Character> GetCharacterByNameAsync(string name)
         {
             return await _context.Characters
                 .Include(c => c.Campaign)
-                .Include(c => c.User)
                 .FirstOrDefaultAsync(character => character.CharacterName == name);
         }
 
@@ -214,7 +212,6 @@ namespace BBDL
         {
             return await _context.Characters
                 .Include(c => c.Campaign)
-                .Include(c => c.User)
                 .FirstOrDefaultAsync(character => character.CharacterID == id);
         }
 
