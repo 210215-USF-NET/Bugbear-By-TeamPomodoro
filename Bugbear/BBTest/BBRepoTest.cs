@@ -34,9 +34,7 @@ namespace BBTest
                         CampaignID = 6,
                         CampaignName = "Cool New Campaign",
                         Description = "A cool new campaign that only my friends get to enjoy!",
-                        GameMasterID = 2,
-                        CampaignUsers = {
-                        }
+                        GameMasterID = 2
                     }
                 );
             }
@@ -67,7 +65,6 @@ namespace BBTest
                         CharacterName = "Lola Bunny",
                         Money = 999,
                         UserID = 4,
-
                         HP = 666,
                         XPLevel = 20,
                         Strength = 18,
@@ -104,9 +101,7 @@ namespace BBTest
                     {
                         EncounterID = 999,
                         EncounterTitle = "Portals",
-                        EncounterDescription = "Captain America is ready to stand alone against Thanos, when he is suddenly joined by thousands of Wakandans and Superheroes from around the world.",
-                        LocationID = 1,
-                        CampaignID = 2
+                        EncounterDescription = "Captain America is ready to stand alone against Thanos, when he is suddenly joined by thousands of Wakandans and Superheroes from around the world."
                     }
                 );
             }
@@ -135,8 +130,7 @@ namespace BBTest
                     {
                         ItemID = 999,
                         ItemName = "Infinity Gauntlet",
-                        ItemDescription = "Contains and harnesses the power of the 6 Infinity Stones",
-                        CharacterID = 1
+                        ItemDescription = "Contains and harnesses the power of the 6 Infinity Stones"
                     }
                 );
             }
@@ -165,8 +159,7 @@ namespace BBTest
                     {
                         LocationID = 999,
                         LocationName = "Avengers Tower",
-                        LocationDescription = "The place where all the magic happens.",
-                        CampaignID = 2
+                        LocationDescription = "The place where all the magic happens."
                     }
                 );
             }
@@ -201,8 +194,6 @@ namespace BBTest
                         NPCID = 42,
                         NPCName = "Lola Bunny",
                         NPCDescription = "A cute bunny who's really good at basketball.",
-                        CampaignID = 2,
-
                         HP = 666,
                         XPLevel = 20,
                         Strength = 18,
@@ -407,22 +398,22 @@ namespace BBTest
             }
         }
 
-        [Fact]
-        public void GetStoryByIDReturnsTheCorrectStory()
-        {
-            using (var context = new BugbearDBContext(options))
-            {
-                //Arrange
-                IBugbearRepository _repo = new BugbearRepoDB(context);
+        //[Fact]
+        //public void GetStoryByIDReturnsTheCorrectStory()
+        //{
+        //    using (var context = new BugbearDBContext(options))
+        //    {
+        //        //Arrange
+        //        IBugbearRepository _repo = new BugbearRepoDB(context);
 
-                //Act
-                var story = _repo.GetStoryByIDAsync(1);
+        //        //Act
+        //        var story = _repo.GetStoryByIDAsync(1);
 
-                //Assert
-                Assert.NotNull(story);
-                Assert.Equal("Here there be Gerblins (1)", story.Result.StoryTitle);
-            }
-        }
+        //        //Assert
+        //        Assert.NotNull(story);
+        //        Assert.Equal("Here there be Gerblins (1)", story.Result.StoryTitle);
+        //    }
+        //}
 
         [Fact]
         public void GetUsersShouldReturnAllUsers()
@@ -456,9 +447,7 @@ namespace BBTest
                         CampaignID = 1,
                         CampaignName = "Balance",
                         Description = "Three friends meet in a pub looking for work.  One thing leads to another and they get sucked into a Groundhog Day loop except it's in a Old Western Town constantly about to be destroyed and they're being followed by mysterious red ghosts.",
-                        GameMasterID = 4,
-                        CampaignUsers = {
-                        }
+                        GameMasterID = 4
                     }
                 );
             }
@@ -487,7 +476,6 @@ namespace BBTest
                         CharacterName = "Magnus Burnsides",
                         Money = 420,
                         UserID = 2,
-
                         HP = 131,
                         XPLevel = 16,
                         Strength = 20,
@@ -522,9 +510,7 @@ namespace BBTest
                     {
                         EncounterID = 1,
                         EncounterTitle = "HTBG - Gerblins Ambush Buggy",
-                        EncounterDescription = "As our heroes make their way to their destination with Barry Blue Jeans, they are ambushed by a small group of Gerblins.",
-                        LocationID = 2,
-                        CampaignID = 1
+                        EncounterDescription = "As our heroes make their way to their destination with Barry Blue Jeans, they are ambushed by a small group of Gerblins."
                     }
                 );
             }
@@ -551,8 +537,7 @@ namespace BBTest
                     {
                         ItemID = 1,
                         ItemName = "Taako's Fabulously Magical Umbrella",
-                        ItemDescription = "An umbrella that Taako stole from a robed skeleton on their very first adventure",
-                        CharacterID = 1
+                        ItemDescription = "An umbrella that Taako stole from a robed skeleton on their very first adventure"
                     }
                 );
             }
@@ -579,8 +564,7 @@ namespace BBTest
                     {
                         LocationID = 2,
                         LocationName = "Forest Road to Phandalin",
-                        LocationDescription = "A forested path that goes between Wave Echo Cave and Phandalin",
-                        CampaignID = 1
+                        LocationDescription = "A forested path that goes between Wave Echo Cave and Phandalin"
                     }
                 );
             }
@@ -613,7 +597,6 @@ namespace BBTest
                         NPCID = 1,
                         NPCName = "Barry Blue Jeans",
                         NPCDescription = "Ward to Gundrun Rockseeker, he's here to get help moving Gundrun's things to Wave Echo Cave.  He doesn't talk much, seems like he might be hiding something...",
-                        CampaignID = 1,
 
                         HP = 69,
                         XPLevel = 18,
@@ -650,8 +633,7 @@ namespace BBTest
                         StoryID = 1,
                         DateCreated = new DateTime(2014, 12, 14),
                         StoryTitle = "Here there be Gerblins (1)",
-                        StoryDescription = "Magnus, Taako, and Merle are recruited to transport Gundrun rockseeker's belongings from Neverwinter to Phandalin by his ward Barry Bluejeans.  Along the way they are attacked by gerblins and Barry is kidnapped.",
-                        CampaignID = 1
+                        StoryDescription = "Magnus, Taako, and Merle are recruited to transport Gundrun rockseeker's belongings from Neverwinter to Phandalin by his ward Barry Bluejeans.  Along the way they are attacked by gerblins and Barry is kidnapped."
                     }
                 );
             }
@@ -703,19 +685,14 @@ namespace BBTest
                         CampaignID = 1,
                         CampaignName = "Balance",
                         Description = "Three friends meet in a pub looking for work.  One thing leads to another and they get sucked into a Groundhog Day loop except it's in a Old Western Town constantly about to be destroyed and they're being followed by mysterious red ghosts.",
-                        GameMasterID = 4,
-                        CampaignUsers = {
-                        }
+                        GameMasterID = 4
                     },
                     new Campaign
                     {
                         CampaignID = 2,
                         CampaignName = "Graduation",
                         Description = "Three boys sign up for hero school and end up as main characters in the weirdest and most rail-roaded war plot ever written.",
-                        GameMasterID = 2,
-                        CampaignUsers = {
-
-                        }
+                        GameMasterID = 2
                     }
                 );
 
@@ -726,7 +703,6 @@ namespace BBTest
                         CharacterName = "Taako",
                         Money = 420,
                         UserID = 1,
-
                         HP = 49,
                         XPLevel = 16,
                         Strength = 10,
@@ -742,7 +718,6 @@ namespace BBTest
                         CharacterName = "Magnus Burnsides",
                         Money = 420,
                         UserID = 2,
-
                         HP = 131,
                         XPLevel = 16,
                         Strength = 20,
@@ -758,7 +733,6 @@ namespace BBTest
                         CharacterName = "Merle Highchurch",
                         Money = 420,
                         UserID = 3,
-
                         HP = 71,
                         XPLevel = 15,
                         Strength = 14,
@@ -774,7 +748,6 @@ namespace BBTest
                         CharacterName = "Firbolg",
                         Money = 420,
                         UserID = 1,
-
                         HP = 42,
                         XPLevel = 10,
                         Strength = 15,
@@ -790,7 +763,6 @@ namespace BBTest
                         CharacterName = "Argo Keene",
                         Money = 420,
                         UserID = 3,
-
                         HP = 57,
                         XPLevel = 10,
                         Strength = 13,
@@ -806,7 +778,6 @@ namespace BBTest
                         CharacterName = "Sir Fitzroy Maplecourt",
                         Money = 420,
                         UserID = 4,
-
                         HP = 38,
                         XPLevel = 10,
                         Strength = 17,
@@ -823,17 +794,13 @@ namespace BBTest
                     {
                         EncounterID = 1,
                         EncounterTitle = "HTBG - Gerblins Ambush Buggy",
-                        EncounterDescription = "As our heroes make their way to their destination with Barry Blue Jeans, they are ambushed by a small group of Gerblins.",
-                        LocationID = 2,
-                        CampaignID = 1
+                        EncounterDescription = "As our heroes make their way to their destination with Barry Blue Jeans, they are ambushed by a small group of Gerblins."
                     },
                     new Encounter
                     {
                         EncounterID = 84,
                         EncounterTitle = "Dungeon Practice",
-                        EncounterDescription = "On their first day of school, the boys practice their combat on some friendly skeletons in the practice dungeon.",
-                        LocationID = 54,
-                        CampaignID = 2
+                        EncounterDescription = "On their first day of school, the boys practice their combat on some friendly skeletons in the practice dungeon."
                     }
                 );
 
@@ -842,15 +809,13 @@ namespace BBTest
                     {
                         ItemID = 1,
                         ItemName = "Taako's Fabulously Magical Umbrella",
-                        ItemDescription = "An umbrella that Taako stole from a robed skeleton on their very first adventure",
-                        CharacterID = 1
+                        ItemDescription = "An umbrella that Taako stole from a robed skeleton on their very first adventure"
                     },
                     new Item
                     {
                         ItemID = 2,
                         ItemName = "Extreme Teen Bible",
-                        ItemDescription = "The tome used by Merle to evangelize young teen dwarves for decades, this bible comunicates the words of Pan is a way relatable to today's youth.",
-                        CharacterID = 3
+                        ItemDescription = "The tome used by Merle to evangelize young teen dwarves for decades, this bible comunicates the words of Pan is a way relatable to today's youth."
                     }
                 );
 
@@ -859,15 +824,13 @@ namespace BBTest
                     {
                         LocationID = 2,
                         LocationName = "Forest Road to Phandalin",
-                        LocationDescription = "A forested path that goes between Wave Echo Cave and Phandalin",
-                        CampaignID = 1
+                        LocationDescription = "A forested path that goes between Wave Echo Cave and Phandalin"
                     },
                     new Location
                     {
                         LocationID = 84,
                         LocationName = "Test Dungeon",
-                        LocationDescription = "A dungeon designed for students to practice their combat skills on eachother and on training dummies without consequence within the school.",
-                        CampaignID = 2
+                        LocationDescription = "A dungeon designed for students to practice their combat skills on eachother and on training dummies without consequence within the school."
                     }
                 );
 
@@ -877,7 +840,6 @@ namespace BBTest
                         NPCID = 1,
                         NPCName = "Barry Blue Jeans",
                         NPCDescription = "Ward to Gundrun Rockseeker, he's here to get help moving Gundrun's things to Wave Echo Cave.  He doesn't talk much, seems like he might be hiding something...",
-                        CampaignID = 1,
 
                         HP = 69,
                         XPLevel = 18,
@@ -893,7 +855,6 @@ namespace BBTest
                         NPCID = 3,
                         NPCName = "Gerblin 2",
                         NPCDescription = "A Gerblin fought by tres horny boys in the first episode.",
-                        CampaignID = 1,
 
                         HP = 7,
                         XPLevel = 1,
@@ -912,16 +873,14 @@ namespace BBTest
                         StoryID = 1,
                         DateCreated = new DateTime(2014, 12, 14),
                         StoryTitle = "Here there be Gerblins (1)",
-                        StoryDescription = "Magnus, Taako, and Merle are recruited to transport Gundrun rockseeker's belongings from Neverwinter to Phandalin by his ward Barry Bluejeans.  Along the way they are attacked by gerblins and Barry is kidnapped.",
-                        CampaignID = 1
+                        StoryDescription = "Magnus, Taako, and Merle are recruited to transport Gundrun rockseeker's belongings from Neverwinter to Phandalin by his ward Barry Bluejeans.  Along the way they are attacked by gerblins and Barry is kidnapped."
                     },
                     new Story
                     {
                         StoryID = 2,
                         DateCreated = new DateTime(2014, 12, 14),
                         StoryTitle = "Here there be Gerblins (2)",
-                        StoryDescription = "After some investigation the trio discover that a Bugbear named Klarg is the leader of the band of Gerblins who kidnapped Barry.  His 2nd in command, Yeemick, tries to convince them to help him overthrow Klarg in exchange for Barry's safety.",
-                        CampaignID = 1
+                        StoryDescription = "After some investigation the trio discover that a Bugbear named Klarg is the leader of the band of Gerblins who kidnapped Barry.  His 2nd in command, Yeemick, tries to convince them to help him overthrow Klarg in exchange for Barry's safety."
                     }
                 );
 

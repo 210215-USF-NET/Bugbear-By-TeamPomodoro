@@ -12,6 +12,6 @@ namespace BBModels
         public DateTime DateCreated { get; set; }
         public string StoryTitle { get; set; }
         public string StoryDescription { get; set; }
-        public int CampaignID { get; set; }
+        public Campaign Campaign { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace BBModels
     {
         public int CharacterID { get; set; }
         public string CharacterName { get; set; }
-        public List<Item> ItemList { get; set; }
+        public List<Item> Items { get; set; }
         public int Money { get; set; }
         public int UserID { get; set; }
 
@@ -23,6 +23,6 @@ namespace BBModels
         public int Intelligence { get; set; }
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
-
+        public Campaign Campaign { get; set; }
     }
 }

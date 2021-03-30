@@ -11,7 +11,7 @@ namespace BBModels
         public int NPCID { get; set; }
         public string NPCName { get; set; }
         public string NPCDescription { get; set; }
-        public int CampaignID { get; set; }
+        public Campaign Campaign { get; set; }
 
         //=================================
         public int HP { get; set; }

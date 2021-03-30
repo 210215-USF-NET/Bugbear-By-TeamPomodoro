@@ -34,7 +34,6 @@ namespace BBBL
         Task<Campaign> GetCampaignByIDAsync(int id);
         Task<Campaign> GetCampaignByNameAsync(string name);
         Task<List<Character>> GetCharactersAsync();
-        Task<List<Character>> GetCharactersByUserIDAsync(int userID);
         Task<Character> GetCharacterByNameAsync(string name);
         Task<Character> GetCharacterByIDAsync(int id);
         Task<List<Encounter>> GetEncountersAsync();

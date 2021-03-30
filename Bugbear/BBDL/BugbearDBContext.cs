@@ -23,7 +23,6 @@ namespace BBDL
         public DbSet<NPC> NPCs { get; set; }
         public DbSet<Story> Stories { get; set; }
         public DbSet<User> Users { get; set; }
-        public IEnumerable<object> Character { get; internal set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -37,7 +36,7 @@ namespace BBDL
                 .Property(e => e.EncounterID)
                 .ValueGeneratedOnAdd();
             modelBuilder.Entity<Item>()
-                .Property(item => item.ItemID)
+                .Property(i => i.ItemID)
                 .ValueGeneratedOnAdd();
             modelBuilder.Entity<Location>()
                 .Property(l => l.LocationID)
@@ -55,8 +54,44 @@ namespace BBDL
                 .Property(u => u.UserID)
                 .ValueGeneratedOnAdd();
 
+            //campaign relationships
             modelBuilder.Entity<Campaign>()
                 .HasMany(c => c.CampaignUsers);
+
+            modelBuilder.Entity<Campaign>()
+                .HasMany(c => c.CampaignEncounters)
+                .WithOne(e => e.Campaign)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Campaign>()
+                .HasMany(c => c.CampaignCharacters)
+                .WithOne(ch => ch.Campaign)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Campaign>()
+                .HasMany(c => c.CampaignLocations)
+                .WithOne(l => l.Campaign)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Campaign>()
+                .HasMany(c => c.CampaignMaps)
+                .WithOne(m => m.Campaign)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Campaign>()
+                .HasMany(c => c.CampaignNPCs)
+                .WithOne(npc => npc.Campaign)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Campaign>()
+                .HasMany(c => c.CampaignStories)
+                .WithOne(s => s.Campaign)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Character>()
+                .HasMany(c => c.Items)
+                .WithOne(i => i.Character)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
