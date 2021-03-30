@@ -77,12 +77,12 @@ namespace BBREST.Controllers
         }
 
         // DELETE api/<EncounterController>/5
-        [HttpDelete("{encounter}")]
-        public async Task<IActionResult> DeleteEncounterAsync(Encounter encounter)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteEncounterAsync(int id)
         {
             try
             {
-                await _bugbearBL.DeleteEncounterAsync(encounter);
+                await _bugbearBL.DeleteEncounterAsync(await _bugbearBL.GetEncounterByIDAsync(id));
                 return NoContent();
             }
             catch
