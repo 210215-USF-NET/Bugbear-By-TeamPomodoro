@@ -60,41 +60,43 @@ namespace BBDL
 
             modelBuilder.Entity<Campaign>()
                 .HasMany(c => c.CampaignEncounters)
-                .WithOne(e => e.Campaign)
+                .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Campaign>()
                 .HasMany(c => c.CampaignCharacters)
-                .WithOne(ch => ch.Campaign)
+                .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Campaign>()
                 .HasMany(c => c.CampaignLocations)
-                .WithOne(l => l.Campaign)
+                .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Campaign>()
                 .HasMany(c => c.CampaignMaps)
-                .WithOne(m => m.Campaign)
+                .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Campaign>()
                 .HasMany(c => c.CampaignNPCs)
-                .WithOne(npc => npc.Campaign)
+                .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Campaign>()
                 .HasMany(c => c.CampaignStories)
-                .WithOne(s => s.Campaign)
+                .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Character>()
                 .HasMany(c => c.Items)
-                .WithOne(i => i.Character)
+                .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<User>()
-                .HasMany(c => c.Characters);
+                .HasMany(c => c.Characters)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -11,6 +11,5 @@ namespace BBModels
         public int LocationID { get; set; }
         public string LocationName { get; set; }
         public string LocationDescription {get; set;}
-        public Campaign Campaign { get; set; }
     }
 }
