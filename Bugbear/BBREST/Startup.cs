@@ -16,6 +16,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Diagnostics.CodeAnalysis;
 using BBREST.Hubs;
+using System.Net.WebSockets;
 
 namespace BBREST
 {
@@ -67,6 +68,28 @@ namespace BBREST
             }
 
             app.UseWebSockets();
+            app.Use(async (context, next) =>
+            {
+                if (context.Request.Path == "/chatsocket")
+                {
+                    if (context.WebSockets.IsWebSocketRequest)
+                    {
+                        var socket = await context.WebSockets.AcceptWebSocketAsync();
+                        while (socket.State == WebSocketState.Open)
+                        {
+                            await Task.Delay(TimeSpan.FromMinutes(1));
+                        }
+                    }
+                    else
+                    {
+                        context.Response.StatusCode = 400;
+                    }
+                }
+                else
+                {
+                    await next();
+                }
+            });
 
             app.UseHttpsRedirection();
 
