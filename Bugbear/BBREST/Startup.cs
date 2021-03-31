@@ -79,11 +79,6 @@ namespace BBREST
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-            });
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
                 endpoints.MapHub<ChatHub>("/chatsocket");
             });
         }
