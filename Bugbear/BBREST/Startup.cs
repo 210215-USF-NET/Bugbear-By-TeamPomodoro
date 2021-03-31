@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Diagnostics.CodeAnalysis;
+using BBREST.Hubs;
 
 namespace BBREST
 {
@@ -32,6 +33,7 @@ namespace BBREST
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSignalR();
             services.AddCors(
                 options =>
                 {
@@ -64,6 +66,8 @@ namespace BBREST
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BBREST v1"));
             }
 
+            app.UseWebSockets();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -71,6 +75,11 @@ namespace BBREST
             app.UseCors();
 
             app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
 
             app.UseEndpoints(endpoints =>
             {
