@@ -68,6 +68,20 @@ namespace BBREST
             }
 
             app.UseWebSockets();
+
+            app.UseHttpsRedirection();
+
+            app.UseRouting();
+
+            app.UseCors();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+
             app.Use(async (context, next) =>
             {
                 if (context.Request.Path == "/chatsocket")
@@ -89,20 +103,6 @@ namespace BBREST
                 {
                     await next();
                 }
-            });
-
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseCors();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-                endpoints.MapHub<ChatHub>("/chatsocket");
             });
         }
     }
