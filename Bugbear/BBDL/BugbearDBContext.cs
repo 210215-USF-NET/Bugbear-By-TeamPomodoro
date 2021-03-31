@@ -54,6 +54,9 @@ namespace BBDL
             modelBuilder.Entity<User>()
                 .Property(u => u.UserID)
                 .ValueGeneratedOnAdd();
+            modelBuilder.Entity<Chat>()
+               .Property(u => u.ChatID)
+               .ValueGeneratedOnAdd();
 
             //campaign relationships
             modelBuilder.Entity<Campaign>()
