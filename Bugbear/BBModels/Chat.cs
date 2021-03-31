@@ -11,7 +11,5 @@ namespace BBModels
         public int ChatID { get; set; }
         public User User { get; set; }
         public string ChatMessage { get; set; }
-        public int DizeSize { get; set; }
-        public int DizeRollValue { get; set; }
     }
 }
