@@ -61,6 +61,11 @@ namespace BBBL
             return await _repo.AddUserAsync(newUser);
         }
 
+        public async Task<Chat> AddChatAsync(Chat newChat)
+        {
+            return await _repo.AddChatAsync(newChat);
+        }
+
 
 
         public async Task<Campaign> DeleteCampaignAsync(Campaign newCampaign)

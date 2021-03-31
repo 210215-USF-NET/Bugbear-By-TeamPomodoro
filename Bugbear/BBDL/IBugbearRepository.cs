@@ -15,6 +15,7 @@ namespace BBDL
         Task<NPC> AddNPCAsync(NPC newNPC);
         Task<Story> AddStoryAsync(Story newStory);
         Task<User> AddUserAsync(User newUser);
+        Task<Chat> AddChatAsync(Chat newChat);
 
 
 

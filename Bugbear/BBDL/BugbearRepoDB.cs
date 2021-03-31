@@ -83,6 +83,13 @@ namespace BBDL
             return newUser;
         }
 
+        public async Task<Chat> AddChatAsync(Chat newChat)
+        {
+            await _context.Chats.AddAsync(newChat);
+            await _context.SaveChangesAsync();
+            return newChat;
+        }
+
         public async Task<Campaign> DeleteCampaignAsync(Campaign newCampaign)
         {
             // We should probably rename all these to something like campaign to delete or dCampaign or somthing like that.

@@ -15,7 +15,7 @@ namespace BBBL
         Task<NPC> AddNPCAsync(NPC newNPC);
         Task<Story> AddStoryAsync(Story newStory);
         Task<User> AddUserAsync(User newUser);
-
+        Task<Chat> AddChatAsync(Chat newChat);
 
 
         Task<Campaign> DeleteCampaignAsync(Campaign newCampaign);
