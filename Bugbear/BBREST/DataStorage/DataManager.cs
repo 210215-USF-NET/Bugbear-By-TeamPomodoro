@@ -13,10 +13,7 @@ namespace BBREST.DataStorage
             var r = new Random();
             return new List<ChatModel>
             {
-                new ChatModel { Data = new List<int> {r.Next(1,40)}, Label = "Data1"},
-                new ChatModel { Data = new List<int> {r.Next(1,40)}, Label = "Data1"},
-                new ChatModel { Data = new List<int> {r.Next(1,40)}, Label = "Data1"},
-                new ChatModel { Data = new List<int> {r.Next(1,40)}, Label = "Data1"}
+                new ChatModel { UserEmail = "email@email.com", Message = "This is a message"}
             };
         }
     }
