@@ -11,5 +11,6 @@ namespace BBModels
         public int MapID { get; set; }
         public string MapTitle { get; set; }
         public byte[] MapImage { get; set; }
+        public int CampaignID { get; set; }
     }
 }

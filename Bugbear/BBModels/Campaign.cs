@@ -15,6 +15,5 @@ namespace BBModels
         public List<Map> CampaignMaps { get; set; }
         public List<NPC> CampaignNPCs { get; set; }
         public List<Story> CampaignStories { get; set; }
-        public List<Chat> CampaignChats { get; set; }
     }
 }

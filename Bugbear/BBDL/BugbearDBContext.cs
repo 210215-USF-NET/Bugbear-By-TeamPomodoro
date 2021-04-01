@@ -23,7 +23,6 @@ namespace BBDL
         public DbSet<NPC> NPCs { get; set; }
         public DbSet<Story> Stories { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<Chat> Chats { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -54,9 +53,6 @@ namespace BBDL
             modelBuilder.Entity<User>()
                 .Property(u => u.UserID)
                 .ValueGeneratedOnAdd();
-            modelBuilder.Entity<Chat>()
-               .Property(u => u.ChatID)
-               .ValueGeneratedOnAdd();
 
             //campaign relationships
             modelBuilder.Entity<Campaign>()
@@ -92,11 +88,6 @@ namespace BBDL
                 .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Campaign>()
-               .HasMany(c => c.CampaignChats)
-               .WithOne()
-               .OnDelete(DeleteBehavior.Cascade);
-
             modelBuilder.Entity<Character>()
                 .HasMany(c => c.Items)
                 .WithOne()
@@ -106,9 +97,6 @@ namespace BBDL
                 .HasMany(c => c.Characters)
                 .WithOne()
                 .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<Chat>()
-                .HasOne(c => c.User);
         }
     }
 }

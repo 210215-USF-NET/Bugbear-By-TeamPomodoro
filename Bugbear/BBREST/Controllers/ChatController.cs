@@ -1,6 +1,11 @@
 ﻿using BBBL;
 using BBModels;
+using BBREST.DataStorage;
+using BBREST.HubConfig;
+using BBREST.Models;
+using BBREST.TimerFeatures;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -16,32 +21,24 @@ namespace BBREST.Controllers
     [ApiController]
     public class ChatController : ControllerBase
     {
-        private readonly IBugbearBL _bugbearBL;
-        public ChatController(IBugbearBL bugbearBL)
+        public readonly IHubContext<ChatHub> _hub;
+
+        public ChatController(IHubContext<ChatHub> hub)
         {
-            _bugbearBL = bugbearBL;
+            _hub = hub;
+        }
+        public IActionResult Get()
+        {
+            var timerManager = new TimerManager(() => _hub.Clients.All.SendAsync("transferchatdata", DataManager.GetData()));
+            return Ok(new { Message = "Request Completed." });
         }
 
-        // GET: api/<EncounterController>
-        [HttpGet]
-        public async Task<IActionResult> GetChatsAsync()
-        {
-            return Ok(await _bugbearBL.GetChatsAsync());
-        }
-
-        // POST api/<ChatController>
+        [Route("send")]                                           //path looks like this: https://localhost:44379/api/chat/send
         [HttpPost]
-        public async Task<IActionResult> AddAChatAsync([FromBody] Chat chat)
+        public IActionResult SendRequest([FromBody] ChatModel msg)
         {
-            try
-            {
-                await _bugbearBL.AddChatAsync(chat);
-                return CreatedAtAction("AddAChat", chat);
-            }
-            catch
-            {
-                return StatusCode(400);
-            }
+            _hub.Clients.All.SendAsync("ReceiveOne", msg.UserEmail, msg.Message);
+            return Ok();
         }
     }
 }

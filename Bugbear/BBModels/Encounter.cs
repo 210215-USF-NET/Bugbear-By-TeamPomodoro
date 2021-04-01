@@ -12,5 +12,6 @@ namespace BBModels
         public string EncounterTitle { get; set; }
         public string EncounterDescription { get; set; }
         public Location Location { get; set; }
+        public int CampaignID { get; set; }
     }
 }

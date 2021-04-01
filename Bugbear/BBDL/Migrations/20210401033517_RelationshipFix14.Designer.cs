@@ -3,15 +3,17 @@ using System;
 using BBDL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace BBDL.Migrations
 {
     [DbContext(typeof(BugbearDBContext))]
-    partial class BugbearDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210401033517_RelationshipFix14")]
+    partial class RelationshipFix14
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,7 +49,7 @@ namespace BBDL.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("CampaignID")
+                    b.Property<int?>("CampaignID")
                         .HasColumnType("integer");
 
                     b.Property<string>("CharacterName")
@@ -99,7 +101,7 @@ namespace BBDL.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("CampaignID")
+                    b.Property<int?>("CampaignID")
                         .HasColumnType("integer");
 
                     b.Property<string>("EncounterDescription")
@@ -150,7 +152,7 @@ namespace BBDL.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("CampaignID")
+                    b.Property<int?>("CampaignID")
                         .HasColumnType("integer");
 
                     b.Property<string>("LocationDescription")
@@ -173,7 +175,7 @@ namespace BBDL.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("CampaignID")
+                    b.Property<int?>("CampaignID")
                         .HasColumnType("integer");
 
                     b.Property<byte[]>("MapImage")
@@ -196,7 +198,7 @@ namespace BBDL.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("CampaignID")
+                    b.Property<int?>("CampaignID")
                         .HasColumnType("integer");
 
                     b.Property<int>("Charisma")
@@ -243,7 +245,7 @@ namespace BBDL.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("CampaignID")
+                    b.Property<int?>("CampaignID")
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("DateCreated")
@@ -287,8 +289,7 @@ namespace BBDL.Migrations
                     b.HasOne("BBModels.Campaign", null)
                         .WithMany("CampaignCharacters")
                         .HasForeignKey("CampaignID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("BBModels.User", null)
                         .WithMany("Characters")
@@ -302,8 +303,7 @@ namespace BBDL.Migrations
                     b.HasOne("BBModels.Campaign", null)
                         .WithMany("CampaignEncounters")
                         .HasForeignKey("CampaignID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("BBModels.Location", "Location")
                         .WithMany()
@@ -325,8 +325,7 @@ namespace BBDL.Migrations
                     b.HasOne("BBModels.Campaign", null)
                         .WithMany("CampaignLocations")
                         .HasForeignKey("CampaignID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("BBModels.Map", b =>
@@ -334,8 +333,7 @@ namespace BBDL.Migrations
                     b.HasOne("BBModels.Campaign", null)
                         .WithMany("CampaignMaps")
                         .HasForeignKey("CampaignID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("BBModels.NPC", b =>
@@ -343,8 +341,7 @@ namespace BBDL.Migrations
                     b.HasOne("BBModels.Campaign", null)
                         .WithMany("CampaignNPCs")
                         .HasForeignKey("CampaignID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("BBModels.Story", b =>
@@ -352,8 +349,7 @@ namespace BBDL.Migrations
                     b.HasOne("BBModels.Campaign", null)
                         .WithMany("CampaignStories")
                         .HasForeignKey("CampaignID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("BBModels.User", b =>

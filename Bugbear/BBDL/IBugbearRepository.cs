@@ -15,7 +15,6 @@ namespace BBDL
         Task<NPC> AddNPCAsync(NPC newNPC);
         Task<Story> AddStoryAsync(Story newStory);
         Task<User> AddUserAsync(User newUser);
-        Task<Chat> AddChatAsync(Chat newChat);
 
 
 
@@ -40,7 +39,6 @@ namespace BBDL
         Task<List<Encounter>> GetEncountersAsync();
         Task<Encounter> GetEncounterByIDAsync(int id);
         Task<List<Item>> GetItemsAsync();
-        Task<List<Chat>> GetChatsAsync();
         Task<Item> GetItemByNameAsync(string name);
         Task<Item> GetItemByIDAsync(int id);
         Task<List<Location>> GetLocationsAsync();

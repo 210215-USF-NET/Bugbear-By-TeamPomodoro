@@ -21,6 +21,7 @@ namespace BBModels
         public int Intelligence { get; set; }
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
+        public int CampaignID { get; set; }
 
     }
 }
