@@ -72,7 +72,8 @@ namespace BBTest
                         Constitution = 8,
                         Intelligence = 16,
                         Wisdom = 11,
-                        Charisma = 20
+                        Charisma = 20,
+                        CampaignID = 2
                     }
                 );
             }
@@ -101,7 +102,8 @@ namespace BBTest
                     {
                         EncounterID = 999,
                         EncounterTitle = "Portals",
-                        EncounterDescription = "Captain America is ready to stand alone against Thanos, when he is suddenly joined by thousands of Wakandans and Superheroes from around the world."
+                        EncounterDescription = "Captain America is ready to stand alone against Thanos, when he is suddenly joined by thousands of Wakandans and Superheroes from around the world.",
+                        CampaignID = 2
                     }
                 );
             }
@@ -159,7 +161,8 @@ namespace BBTest
                     {
                         LocationID = 999,
                         LocationName = "Avengers Tower",
-                        LocationDescription = "The place where all the magic happens."
+                        LocationDescription = "The place where all the magic happens.",
+                        CampaignID = 2
                     }
                 );
             }
@@ -201,7 +204,8 @@ namespace BBTest
                         Constitution = 8,
                         Intelligence = 16,
                         Wisdom = 11,
-                        Charisma = 20
+                        Charisma = 20,
+                        CampaignID = 2
                     }
                 );
             }
@@ -232,6 +236,7 @@ namespace BBTest
                         DateCreated = DateTime.Now,
                         StoryTitle = "Thanos' Quest",
                         StoryDescription = "Thanos spent his life trying to do what he thought was right.  he knew there were too many people, and the only way to deal with them was to cull the herd.  Randomly, the only fair way.",
+                        CampaignID = 2
                     }
                 );
             }
@@ -483,7 +488,8 @@ namespace BBTest
                         Constitution = 18,
                         Intelligence = 10,
                         Wisdom = 12,
-                        Charisma = 12
+                        Charisma = 12,
+                        CampaignID = 2
                     }
                 );
             }
@@ -510,7 +516,8 @@ namespace BBTest
                     {
                         EncounterID = 1,
                         EncounterTitle = "HTBG - Gerblins Ambush Buggy",
-                        EncounterDescription = "As our heroes make their way to their destination with Barry Blue Jeans, they are ambushed by a small group of Gerblins."
+                        EncounterDescription = "As our heroes make their way to their destination with Barry Blue Jeans, they are ambushed by a small group of Gerblins.",
+                        CampaignID = 2
                     }
                 );
             }
@@ -564,7 +571,8 @@ namespace BBTest
                     {
                         LocationID = 2,
                         LocationName = "Forest Road to Phandalin",
-                        LocationDescription = "A forested path that goes between Wave Echo Cave and Phandalin"
+                        LocationDescription = "A forested path that goes between Wave Echo Cave and Phandalin",
+                        CampaignID = 2
                     }
                 );
             }
@@ -633,7 +641,8 @@ namespace BBTest
                         StoryID = 1,
                         DateCreated = new DateTime(2014, 12, 14),
                         StoryTitle = "Here there be Gerblins (1)",
-                        StoryDescription = "Magnus, Taako, and Merle are recruited to transport Gundrun rockseeker's belongings from Neverwinter to Phandalin by his ward Barry Bluejeans.  Along the way they are attacked by gerblins and Barry is kidnapped."
+                        StoryDescription = "Magnus, Taako, and Merle are recruited to transport Gundrun rockseeker's belongings from Neverwinter to Phandalin by his ward Barry Bluejeans.  Along the way they are attacked by gerblins and Barry is kidnapped.",
+                        CampaignID = 2
                     }
                 );
             }
@@ -710,7 +719,8 @@ namespace BBTest
                         Constitution = 14,
                         Intelligence = 20,
                         Wisdom = 12,
-                        Charisma = 10
+                        Charisma = 10,
+                        CampaignID = 2
                     },
                     new Character
                     {
@@ -725,7 +735,8 @@ namespace BBTest
                         Constitution = 18,
                         Intelligence = 10,
                         Wisdom = 12,
-                        Charisma = 12
+                        Charisma = 12,
+                        CampaignID = 2
                     },
                     new Character
                     {
@@ -740,7 +751,8 @@ namespace BBTest
                         Constitution = 16,
                         Intelligence = 10,
                         Wisdom = 17,
-                        Charisma = 12
+                        Charisma = 12,
+                        CampaignID = 1
                     },
                     new Character
                     {
@@ -755,7 +767,8 @@ namespace BBTest
                         Constitution = 13,
                         Intelligence = 11,
                         Wisdom = 17,
-                        Charisma = 13
+                        Charisma = 13,
+                        CampaignID = 1
                     },
                     new Character
                     {
@@ -770,7 +783,8 @@ namespace BBTest
                         Constitution = 13,
                         Intelligence = 17,
                         Wisdom = 9,
-                        Charisma = 15
+                        Charisma = 15,
+                        CampaignID = 1
                     },
                     new Character
                     {
@@ -785,7 +799,8 @@ namespace BBTest
                         Constitution = 15,
                         Intelligence = 8,
                         Wisdom = 11,
-                        Charisma = 15
+                        Charisma = 15,
+                        CampaignID = 2
                     }
                 );
 
@@ -794,13 +809,15 @@ namespace BBTest
                     {
                         EncounterID = 1,
                         EncounterTitle = "HTBG - Gerblins Ambush Buggy",
-                        EncounterDescription = "As our heroes make their way to their destination with Barry Blue Jeans, they are ambushed by a small group of Gerblins."
+                        EncounterDescription = "As our heroes make their way to their destination with Barry Blue Jeans, they are ambushed by a small group of Gerblins.",
+                        CampaignID = 2
                     },
                     new Encounter
                     {
                         EncounterID = 84,
                         EncounterTitle = "Dungeon Practice",
-                        EncounterDescription = "On their first day of school, the boys practice their combat on some friendly skeletons in the practice dungeon."
+                        EncounterDescription = "On their first day of school, the boys practice their combat on some friendly skeletons in the practice dungeon.",
+                        CampaignID = 1
                     }
                 );
 
@@ -824,13 +841,15 @@ namespace BBTest
                     {
                         LocationID = 2,
                         LocationName = "Forest Road to Phandalin",
-                        LocationDescription = "A forested path that goes between Wave Echo Cave and Phandalin"
+                        LocationDescription = "A forested path that goes between Wave Echo Cave and Phandalin",
+                        CampaignID = 2
                     },
                     new Location
                     {
                         LocationID = 84,
                         LocationName = "Test Dungeon",
-                        LocationDescription = "A dungeon designed for students to practice their combat skills on eachother and on training dummies without consequence within the school."
+                        LocationDescription = "A dungeon designed for students to practice their combat skills on eachother and on training dummies without consequence within the school.",
+                        CampaignID = 1
                     }
                 );
 
@@ -848,7 +867,8 @@ namespace BBTest
                         Constitution = 15,
                         Intelligence = 15,
                         Wisdom = 11,
-                        Charisma = 16
+                        Charisma = 16,
+                        CampaignID = 2
                     },
                     new NPC
                     {
@@ -863,7 +883,8 @@ namespace BBTest
                         Constitution = 8,
                         Intelligence = 4,
                         Wisdom = 6,
-                        Charisma = 3
+                        Charisma = 3,
+                        CampaignID = 1
                     }
                 );
 
@@ -873,14 +894,16 @@ namespace BBTest
                         StoryID = 1,
                         DateCreated = new DateTime(2014, 12, 14),
                         StoryTitle = "Here there be Gerblins (1)",
-                        StoryDescription = "Magnus, Taako, and Merle are recruited to transport Gundrun rockseeker's belongings from Neverwinter to Phandalin by his ward Barry Bluejeans.  Along the way they are attacked by gerblins and Barry is kidnapped."
+                        StoryDescription = "Magnus, Taako, and Merle are recruited to transport Gundrun rockseeker's belongings from Neverwinter to Phandalin by his ward Barry Bluejeans.  Along the way they are attacked by gerblins and Barry is kidnapped.",
+                        CampaignID = 2
                     },
                     new Story
                     {
                         StoryID = 2,
                         DateCreated = new DateTime(2014, 12, 14),
                         StoryTitle = "Here there be Gerblins (2)",
-                        StoryDescription = "After some investigation the trio discover that a Bugbear named Klarg is the leader of the band of Gerblins who kidnapped Barry.  His 2nd in command, Yeemick, tries to convince them to help him overthrow Klarg in exchange for Barry's safety."
+                        StoryDescription = "After some investigation the trio discover that a Bugbear named Klarg is the leader of the band of Gerblins who kidnapped Barry.  His 2nd in command, Yeemick, tries to convince them to help him overthrow Klarg in exchange for Barry's safety.",
+                        CampaignID = 1
                     }
                 );
 

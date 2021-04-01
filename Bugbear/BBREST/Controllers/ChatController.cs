@@ -33,7 +33,7 @@ namespace BBREST.Controllers
             return Ok(new { Message = "Request Completed." });
         }
 
-        [Route("send")]                                           //path looks like this: https://localhost:44379/api/chat/send
+        [Route("send")]
         [HttpPost]
         public IActionResult SendRequest([FromBody] ChatModel msg)
         {
