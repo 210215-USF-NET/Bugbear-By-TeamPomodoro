@@ -15,7 +15,7 @@ namespace BBBL
         Task<NPC> AddNPCAsync(NPC newNPC);
         Task<Story> AddStoryAsync(Story newStory);
         Task<User> AddUserAsync(User newUser);
-
+        Task<Chat> AddChatAsync(Chat newChat);
 
 
         Task<Campaign> DeleteCampaignAsync(Campaign newCampaign);
@@ -39,6 +39,7 @@ namespace BBBL
         Task<List<Encounter>> GetEncountersAsync();
         Task<Encounter> GetEncounterByIDAsync(int id);
         Task<List<Item>> GetItemsAsync();
+        Task<List<Chat>> GetChatsAsync();
         Task<Item> GetItemByNameAsync(string name);
         Task<Item> GetItemByIDAsync(int id);
         Task<List<Location>> GetLocationsAsync();

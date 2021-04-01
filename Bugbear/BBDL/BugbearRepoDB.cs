@@ -83,6 +83,13 @@ namespace BBDL
             return newUser;
         }
 
+        public async Task<Chat> AddChatAsync(Chat newChat)
+        {
+            await _context.Chats.AddAsync(newChat);
+            await _context.SaveChangesAsync();
+            return newChat;
+        }
+
         public async Task<Campaign> DeleteCampaignAsync(Campaign newCampaign)
         {
             // We should probably rename all these to something like campaign to delete or dCampaign or somthing like that.
@@ -199,6 +206,12 @@ namespace BBDL
             // This should return all characters in our database.
             return await _context.Characters
                 .Select(Character => Character).ToListAsync();
+        }
+        public async Task<List<Chat>> GetChatsAsync()
+        {
+            return await _context.Chats
+                .Include(chat => chat.User)
+                .Select(Chat => Chat).ToListAsync();
         }
         public async Task<Character> GetCharacterByNameAsync(string name)
         {

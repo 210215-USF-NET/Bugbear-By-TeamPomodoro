@@ -3,15 +3,17 @@ using System;
 using BBDL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace BBDL.Migrations
 {
     [DbContext(typeof(BugbearDBContext))]
-    partial class BugbearDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210331221553_RelationshipFix13")]
+    partial class RelationshipFix13
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
