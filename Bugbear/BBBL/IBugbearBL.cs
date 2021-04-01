@@ -44,7 +44,7 @@ namespace BBBL
         Task<Location> GetLocationByNameAsync(string name);
         Task<Location> GetLocationByIDAsync(int id);
         Task<List<Map>> GetMapAsync();
-        Task<Map> GetMapByTitleAsync(string title);
+        Task<Map> GetMapByIDAsync(int id);
         Task<List<NPC>> GetNPCAsync();
         Task<NPC> GetNPCByIDAsync(int id);
         Task<NPC> GetNPCByNameAsync(string name);

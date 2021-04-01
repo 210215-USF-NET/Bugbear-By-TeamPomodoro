@@ -266,11 +266,11 @@ namespace BBDL
             return await _context.Maps
                 .Select(i => i).ToListAsync();
         }
-        public async Task<Map> GetMapByTitleAsync(string title)
+        public async Task<Map> GetMapByIDAsync(int id)
         {
             // returns the proper Map from the database, given said Map's name
             return await _context.Maps
-                .FirstOrDefaultAsync(m => m.MapTitle.Equals(title));
+                .FirstOrDefaultAsync(m => m.MapTitle.Equals(id));
         }
 
         public async Task<List<NPC>> GetNPCAsync()

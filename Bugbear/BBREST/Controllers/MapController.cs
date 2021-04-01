@@ -28,14 +28,14 @@ namespace BBREST.Controllers
             return Ok(await _bugbearBL.GetMapAsync());
         }
 
-        // GET api/<MapController>/5
-        //[HttpGet("{name}")]
-        //public async Task<IActionResult> GetMapByNameAsync(string name)
-        //{
-        //    var map = await _bugbearBL.GetMapByNameAsync(name);
-        //    if (map == null) return NotFound();
-        //    return Ok(map);
-        //}
+        //GET: api/<MapController>/5
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetMapByIDAsync(int id)
+        {
+            var story = await _bugbearBL.GetMapByIDAsync(id);
+            if (story == null) return NotFound();
+            return Ok(story);
+        }
 
         // POST api/<MapController>
         [HttpPost]
