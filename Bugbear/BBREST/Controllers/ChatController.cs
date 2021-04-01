@@ -1,6 +1,5 @@
 ﻿using BBBL;
 using BBModels;
-using BBREST.DataStorage;
 using BBREST.HubConfig;
 using BBREST.Models;
 using BBREST.TimerFeatures;
@@ -29,7 +28,6 @@ namespace BBREST.Controllers
         }
         public IActionResult Get()
         {
-            var timerManager = new TimerManager(() => _hub.Clients.All.SendAsync("transferchatdata", DataManager.GetData()));
             return Ok(new { Message = "Request Completed." });
         }
 

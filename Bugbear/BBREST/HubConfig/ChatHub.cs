@@ -9,13 +9,9 @@ namespace BBREST.HubConfig
 {
     public class ChatHub : Hub
     {
-        public async Task BroadcastChatData(List<ChatModel> data)
+        public Task SendMessage1(string user, string message)
         {
-            await Clients.All.SendAsync("broadcastchatdata", data);
-        }
-        public async Task SendMessage1(string user, string message)
-        {
-            await Clients.All.SendAsync("ReceiveOne", user, message);
+            return Clients.All.SendAsync("ReceiveOne", user, message);
         }
     }
 }
