@@ -236,6 +236,10 @@ namespace BBDL
             //returns the proper Item from the database, given said Item's name
             return await _context.Items.FirstOrDefaultAsync(i => i.ItemName.Equals(name));
         }
+        public async Task<Item> GetItemByIDAsync(int id)
+        {
+            return await _context.Items.FirstOrDefaultAsync(i => i.ItemID.Equals(id));
+        }
 
         public async Task<List<Location>> GetLocationsAsync()
         {
@@ -248,6 +252,11 @@ namespace BBDL
             // returns the proper Location from the database, given said Location's name
             return await _context.Locations
                 .FirstOrDefaultAsync(l => l.LocationName.Equals(name));
+        }
+        public async Task<Location> GetLocationByIDAsync(int id)
+        {
+            return await _context.Locations
+                .FirstOrDefaultAsync(l => l.LocationID.Equals(id));
         }
 
         public async Task<List<Map>> GetMapAsync()

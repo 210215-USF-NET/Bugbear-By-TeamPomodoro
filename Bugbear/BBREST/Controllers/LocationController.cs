@@ -29,13 +29,13 @@ namespace BBREST.Controllers
         }
 
         // GET api/<LocationController>/5
-        //[HttpGet("{name}")]
-        //public async Task<IActionResult> GetLocationByNameAsync(string name)
-        //{
-        //    var location = await _bugbearBL.GetLocationByNameAsync(name);
-        //    if (location == null) return NotFound();
-        //    return Ok(location);
-        //}
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetLocationByIDAsync(int id)
+        {
+            var location = await _bugbearBL.GetLocationByIDAsync(id);
+            if (location == null) return NotFound();
+            return Ok(location);
+        }
 
         // POST api/<LocationController>
         [HttpPost]

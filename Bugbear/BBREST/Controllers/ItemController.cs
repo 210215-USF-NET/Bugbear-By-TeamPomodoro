@@ -29,13 +29,13 @@ namespace BBREST.Controllers
         }
 
         // GET api/<ItemController>/5
-        //[HttpGet("{name}")]
-        //public async Task<IActionResult> GetItemByNameAsync(string name)
-        //{
-        //    var item = await _bugbearBL.GetItemByNameAsync(name);
-        //    if (item == null) return NotFound();
-        //    return Ok(item);
-        //}
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetItemByIDAsync(int id)
+        {
+            var item = await _bugbearBL.GetItemByIDAsync(id);
+            if (item == null) return NotFound();
+            return Ok(item);
+        }
 
         // POST api/<ItemController>
         [HttpPost]

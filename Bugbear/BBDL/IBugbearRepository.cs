@@ -40,8 +40,10 @@ namespace BBDL
         Task<Encounter> GetEncounterByIDAsync(int id);
         Task<List<Item>> GetItemsAsync();
         Task<Item> GetItemByNameAsync(string name);
+        Task<Item> GetItemByIDAsync(int id);
         Task<List<Location>> GetLocationsAsync();
         Task<Location> GetLocationByNameAsync(string name);
+        Task<Location> GetLocationByIDAsync(int id);
         Task<List<Map>> GetMapAsync();
         Task<Map> GetMapByTitleAsync(string title);
         Task<List<NPC>> GetNPCAsync();

@@ -152,6 +152,10 @@ namespace BBBL
         {
             return await _repo.GetItemByNameAsync(name);
         }
+        public async Task<Item> GetItemByIDAsync(int id)
+        {
+            return await _repo.GetItemByIDAsync(id);
+        }
 
         public async Task<List<Location>> GetLocationsAsync()
         {
@@ -160,6 +164,10 @@ namespace BBBL
         public async Task<Location> GetLocationByNameAsync(string name)
         {
             return await _repo.GetLocationByNameAsync(name);
+        }
+        public async Task<Location> GetLocationByIDAsync(int id)
+        {
+            return await _repo.GetLocationByIDAsync(id);
         }
 
         public async Task<List<Map>> GetMapAsync()
