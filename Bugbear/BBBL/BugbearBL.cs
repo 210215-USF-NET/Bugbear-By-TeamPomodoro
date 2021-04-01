@@ -202,11 +202,14 @@ namespace BBBL
         {
             return await _repo.GetUsersAsync();
         }
+        public async Task<List<Chat>> GetChatsAsync()
+        {
+            return await _repo.GetChatsAsync();
+        }
         public async Task<User> GetUserByEmailAsync(string email)
         {
             return await _repo.GetUserByEmailAsync(email);
         }
-
 
 
         public async Task<Campaign> UpdateCampaignAsync(Campaign campaignToBeUpdated)

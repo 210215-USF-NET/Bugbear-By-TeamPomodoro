@@ -39,6 +39,7 @@ namespace BBBL
         Task<List<Encounter>> GetEncountersAsync();
         Task<Encounter> GetEncounterByIDAsync(int id);
         Task<List<Item>> GetItemsAsync();
+        Task<List<Chat>> GetChatsAsync();
         Task<Item> GetItemByNameAsync(string name);
         Task<List<Location>> GetLocationsAsync();
         Task<Location> GetLocationByNameAsync(string name);

@@ -22,13 +22,12 @@ namespace BBREST.Controllers
             _bugbearBL = bugbearBL;
         }
 
-        // GET api/<ChatController>/5
-        //[HttpGet("{UserID}")]
-        //[Produces("application/json")]
-        //public async Task<IActionResult> GetChatsByUserIDAsync(int userID)
-        //{
-        //    return Ok(await _bugbearBL.GetChatsByUserIDAsync(userID));
-        //}
+        // GET: api/<EncounterController>
+        [HttpGet]
+        public async Task<IActionResult> GetChatsAsync()
+        {
+            return Ok(await _bugbearBL.GetChatsAsync());
+        }
 
         // POST api/<ChatController>
         [HttpPost]

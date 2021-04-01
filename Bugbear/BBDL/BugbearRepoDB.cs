@@ -207,6 +207,12 @@ namespace BBDL
             return await _context.Characters
                 .Select(Character => Character).ToListAsync();
         }
+        public async Task<List<Chat>> GetChatsAsync()
+        {
+            return await _context.Chats
+                .Include(chat => chat.User)
+                .Select(Chat => Chat).ToListAsync();
+        }
         public async Task<Character> GetCharacterByNameAsync(string name)
         {
             return await _context.Characters
