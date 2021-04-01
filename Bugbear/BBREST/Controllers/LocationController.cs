@@ -53,27 +53,27 @@ namespace BBREST.Controllers
         }
 
         // PUT api/<LocationController>/5
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> UpdateLocationAsync(int id, [FromBody] Location location)
-        //{
-        //    try
-        //    {
-        //        await _bugbearBL.UpdateLocationAsync(location);
-        //        return NoContent();
-        //    }
-        //    catch
-        //    {
-        //        return StatusCode(500);
-        //    }
-        //}
-
-        // DELETE api/<LocationController>/5
-        [HttpDelete("{location}")]
-        public async Task<IActionResult> DeleteLocationAsync(Location location)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateLocationAsync(int id, [FromBody] Location location)
         {
             try
             {
-                await _bugbearBL.DeleteLocationAsync(location);
+                await _bugbearBL.UpdateLocationAsync(location);
+                return NoContent();
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
+        }
+
+        // DELETE api/<LocationController>/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteLocationAsync(int id)
+        {
+            try
+            {
+                await _bugbearBL.DeleteLocationAsync(await _bugbearBL.GetLocationByIDAsync(id));
                 return NoContent();
             }
             catch

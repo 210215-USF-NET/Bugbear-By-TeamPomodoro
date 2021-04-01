@@ -53,27 +53,27 @@ namespace BBREST.Controllers
         }
 
         // PUT api/<ItemController>/5
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> UpdateItemAsync(int id, [FromBody] Item item)
-        //{
-        //    try
-        //    {
-        //        await _bugbearBL.UpdateItemAsync(item);
-        //        return NoContent();
-        //    }
-        //    catch
-        //    {
-        //        return StatusCode(500);
-        //    }
-        //}
-
-        // DELETE api/<ItemController>/5
-        [HttpDelete("{item}")]
-        public async Task<IActionResult> DeleteItemAsync(Item item)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateItemAsync(int id, [FromBody] Item item)
         {
             try
             {
-                await _bugbearBL.DeleteItemAsync(item);
+                await _bugbearBL.UpdateItemAsync(item);
+                return NoContent();
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
+        }
+
+        // DELETE api/<ItemController>/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteItemAsync(int id)
+        {
+            try
+            {
+                await _bugbearBL.DeleteItemAsync(await _bugbearBL.GetItemByIDAsync(id));
                 return NoContent();
             }
             catch
