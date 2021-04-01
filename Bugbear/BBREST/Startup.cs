@@ -34,7 +34,7 @@ namespace BBREST
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", builder => builder
-                .WithOrigins("https://bugbearcampaignmanager.azurewebsites.net")
+                .WithOrigins("https://bugbearcampaignmanager.azurewebsites.net", "http://localhost:4200")
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials());
