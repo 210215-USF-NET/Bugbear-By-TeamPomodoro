@@ -55,8 +55,6 @@ namespace BBDL
                 .ValueGeneratedOnAdd();
 
             //campaign relationships
-            modelBuilder.Entity<Campaign>()
-                .HasMany(c => c.CampaignUsers);
 
             modelBuilder.Entity<Campaign>()
                 .HasMany(c => c.CampaignEncounters)

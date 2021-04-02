@@ -159,7 +159,6 @@ namespace BBDL
             // I think we should have an argument to get the campagin a certain user is associated with. So GetCampaigns(User user){}
             // This should return all campaign in our database.
             return await _context.Campaigns
-                .Include(c => c.CampaignUsers)
                 .Include(c => c.CampaignCharacters)
                 .Include(c => c.CampaignEncounters)
                 .Include(c => c.CampaignLocations)
@@ -172,7 +171,6 @@ namespace BBDL
         {
             //returns a Campaign given said campaign's ID
             return await _context.Campaigns
-                .Include(c => c.CampaignUsers)
                 .Include(c => c.CampaignCharacters)
                 .Include(c => c.CampaignEncounters)
                 .Include(c => c.CampaignLocations)
@@ -185,7 +183,6 @@ namespace BBDL
         {
             //returns a Campaign given said Campaign's Name
             return await _context.Campaigns
-                .Include(c => c.CampaignUsers)
                 .Include(c => c.CampaignCharacters)
                 .Include(c => c.CampaignEncounters)
                 .Include(c => c.CampaignLocations)

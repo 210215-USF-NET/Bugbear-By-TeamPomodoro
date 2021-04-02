@@ -8,7 +8,6 @@ namespace BBModels
         public string CampaignName { get; set; }
         public string Description { get; set; }
         public int GameMasterID { get; set; }
-        public List<User> CampaignUsers { get; set; }
         public List<Character> CampaignCharacters { get; set; }
         public List<Encounter> CampaignEncounters { get; set; }
         public List<Location> CampaignLocations { get; set; }
