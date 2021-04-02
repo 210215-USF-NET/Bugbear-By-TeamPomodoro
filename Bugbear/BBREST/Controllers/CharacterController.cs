@@ -38,14 +38,6 @@ namespace BBREST.Controllers
             return Ok(character);
         }
 
-        // GET api/<CharacterController>/5
-        //[HttpGet("{UserID}")]
-        //[Produces("application/json")]
-        //public async Task<IActionResult> GetCharactersByUserIDAsync(int userID)
-        //{
-        //    return Ok(await _bugbearBL.GetCharactersByUserIDAsync(userID));
-        //}
-
         // POST api/<CharacterController>
         [HttpPost]
         public async Task<IActionResult> AddACharacterAsync([FromBody] Character character)

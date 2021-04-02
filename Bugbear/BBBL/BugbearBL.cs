@@ -61,13 +61,6 @@ namespace BBBL
             return await _repo.AddUserAsync(newUser);
         }
 
-        //public async Task<Chat> AddChatAsync(Chat newChat)
-        //{
-        //    return await _repo.AddChatAsync(newChat);
-        //}
-
-
-
         public async Task<Campaign> DeleteCampaignAsync(Campaign newCampaign)
         {
             return await _repo.DeleteCampaignAsync(newCampaign);
@@ -210,10 +203,7 @@ namespace BBBL
         {
             return await _repo.GetUsersAsync();
         }
-        //public async Task<List<Chat>> GetChatsAsync()
-        //{
-        //    return await _repo.GetChatsAsync();
-        //}
+
         public async Task<User> GetUserByEmailAsync(string email)
         {
             return await _repo.GetUserByEmailAsync(email);

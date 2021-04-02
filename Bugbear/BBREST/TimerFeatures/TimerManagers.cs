@@ -8,9 +8,9 @@ namespace BBREST.TimerFeatures
 {
     public class TimerManager
     {
-        private Timer _timer;
-        private AutoResetEvent _autoResetEvent;
-        private Action _action;
+        private readonly Timer _timer;
+        private readonly AutoResetEvent _autoResetEvent;
+        private readonly Action _action;
         public DateTime TimerStarted { get; set; }
         public TimerManager(Action action)
         {

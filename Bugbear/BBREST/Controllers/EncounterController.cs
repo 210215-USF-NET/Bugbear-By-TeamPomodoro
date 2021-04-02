@@ -29,15 +29,6 @@ namespace BBREST.Controllers
         }
 
         // GET api/<EncounterController>/5
-        //[HttpGet("{name}")]
-        //public async Task<IActionResult> GetEncounterByNameAsync(string name)
-        //{
-        //    var encounter = await _bugbearBL.GetEncounterByNameAsync(name);
-        //    if (encounter == null) return NotFound();
-        //    return Ok(encounter);
-        //}
-
-        // GET api/<EncounterController>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEncounterByIDAsync(int id)
         {

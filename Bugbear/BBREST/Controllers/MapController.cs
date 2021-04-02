@@ -52,21 +52,6 @@ namespace BBREST.Controllers
             }
         }
 
-        // PUT api/<MapController>/5
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> UpdateMapAsync(int id, [FromBody] Map map)
-        //{
-        //    try
-        //    {
-        //        await _bugbearBL.UpdateMapAsync(map);
-        //        return NoContent();
-        //    }
-        //    catch
-        //    {
-        //        return StatusCode(500);
-        //    }
-        //}
-
         // DELETE api/<MapController>/5
         [HttpDelete("{map}")]
         public async Task<IActionResult> DeleteMapAsync(Map map)
