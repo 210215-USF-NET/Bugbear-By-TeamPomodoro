@@ -52,21 +52,6 @@ namespace BBREST.Controllers
             }
         }
 
-        // PUT api/<UserController>/5
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> UpdateUserAsync(int id, [FromBody] User user)
-        //{
-        //    try
-        //    {
-        //        await _bugbearBL.UpdateUserAsync(user);
-        //        return NoContent();
-        //    }
-        //    catch
-        //    {
-        //        return StatusCode(500);
-        //    }
-        //}
-
         // DELETE api/<UserController>/5
         [HttpDelete("{user}")]
         public async Task<IActionResult> DeleteUserAsync(User user)

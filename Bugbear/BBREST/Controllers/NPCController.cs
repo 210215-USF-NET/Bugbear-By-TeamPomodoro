@@ -28,15 +28,6 @@ namespace BBREST.Controllers
             return Ok(await _bugbearBL.GetNPCAsync());
         }
 
-        // GET api/<NPCController>/5
-        //[HttpGet("{name}")]
-        //public async Task<IActionResult> GetNPCByNameAsync(string name)
-        //{
-        //    var npc = await _bugbearBL.GetNPCByNameAsync(name);
-        //    if (npc == null) return NotFound();
-        //    return Ok(npc);
-        //}
-
         // POST api/<NPCController>
         [HttpPost]
         public async Task<IActionResult> AddANPCAsync([FromBody] NPC npc)
@@ -51,21 +42,6 @@ namespace BBREST.Controllers
                 return StatusCode(400);
             }
         }
-
-        // PUT api/<NPCController>/5
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> UpdateNPCAsync(int id, [FromBody] NPC npc)
-        //{
-        //    try
-        //    {
-        //        await _bugbearBL.UpdateNPCAsync(npc);
-        //        return NoContent();
-        //    }
-        //    catch
-        //    {
-        //        return StatusCode(500);
-        //    }
-        //}
 
         // DELETE api/<NPCController>/5
         [HttpDelete("{npc}")]
